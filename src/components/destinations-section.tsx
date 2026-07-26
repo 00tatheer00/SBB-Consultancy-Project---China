@@ -42,7 +42,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center flex-wrap gap-2">
               <span>Explore Top Academic</span>
-              <span className="text-[#1E90FF]">Cities in China</span>
+              <span className="text-[#DC2626]">Cities in China</span>
               <ChinaFlag size="lg" />
             </h2>
             <p className="text-slate-600 text-base font-normal">
@@ -56,9 +56,9 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
               <button
                 key={region}
                 onClick={() => setSelectedRegion(region)}
-                className={`px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full transition-all ${
+                className={`px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full transition-all cursor-pointer ${
                   selectedRegion === region
-                    ? "bg-[#1E90FF] text-white shadow-xs font-bold"
+                    ? "bg-[#DC2626] text-white shadow-xs font-bold"
                     : "bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200/60"
                 }`}
               >
@@ -73,7 +73,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
           {filteredDestinations.map((dest) => (
             <GlassCard
               key={dest.id}
-              className="p-0 overflow-hidden border border-slate-200 bg-white flex flex-col justify-between group hover:border-[#1E90FF]/40"
+              className="p-0 overflow-hidden border border-slate-200 bg-white flex flex-col justify-between group hover:border-[#DC2626]/40"
             >
               <div>
                 {/* Header Image Frame */}
@@ -108,15 +108,15 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
                   <div className="bg-slate-50 rounded-xl p-3 space-y-2 border border-slate-100">
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-slate-500 font-medium flex items-center gap-1">
-                        <DollarSign className="w-3.5 h-3.5 text-[#1E90FF]" /> Avg. Tuition:
+                        <DollarSign className="w-3.5 h-3.5 text-[#DC2626]" /> Avg. Tuition:
                       </span>
                       <span className="font-bold text-slate-900">{dest.avgTuition}</span>
                     </div>
                     <div className="flex items-start justify-between text-xs pt-1.5 border-t border-slate-200/60">
                       <span className="text-slate-500 font-medium flex items-center gap-1 shrink-0">
-                        <Sparkles className="w-3.5 h-3.5 text-[#1E90FF]" /> Scholarship:
+                        <Sparkles className="w-3.5 h-3.5 text-[#DC2626]" /> Scholarship:
                       </span>
-                      <span className="font-semibold text-[#1E90FF] text-right line-clamp-2 pl-2">
+                      <span className="font-semibold text-[#DC2626] text-right line-clamp-2 pl-2">
                         {dest.scholarshipsAvailable}
                       </span>
                     </div>
@@ -127,11 +127,11 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
                     <p className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                       Featured Programs
                     </p>
-                    <div className="flex flex-[#EAF4FF] flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1.5">
                       {dest.featuredPrograms.map((prog, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-0.5 rounded bg-[#EAF4FF] text-[#1E90FF] text-[11px] font-semibold"
+                          className="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#DC2626] text-[11px] font-semibold"
                         >
                           {prog}
                         </span>
@@ -143,7 +143,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
                   <ul className="space-y-1.5 pt-1">
                     {dest.highlights.map((item, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-xs text-slate-600 font-medium">
-                        <Check className="w-3.5 h-3.5 text-[#1E90FF] shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#DC2626] shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -204,8 +204,8 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
                 <p className="text-xs text-slate-500 font-semibold">Average Tuition in China</p>
                 <p className="text-sm font-bold text-slate-900">{activeModalDestination.avgTuition}</p>
               </div>
-              <div className="p-4 bg-[#EAF4FF] rounded-xl border border-[#1E90FF]/20">
-                <p className="text-xs text-[#1E90FF] font-semibold">JW202 Visa Success Rate</p>
+              <div className="p-4 bg-[#FEF2F2] rounded-xl border border-[#DC2626]/20">
+                <p className="text-xs text-[#DC2626] font-semibold">JW202 Visa Success Rate</p>
                 <p className="text-sm font-bold text-slate-900">{activeModalDestination.visaSuccessRate}</p>
               </div>
             </div>

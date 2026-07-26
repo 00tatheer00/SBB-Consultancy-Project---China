@@ -39,13 +39,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* 1. Top Announcement Bar (Deep Royal Blue) */}
-      <div className="bg-[#003875] text-white text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-white/10">
+      {/* 1. Top Announcement Bar (Deep Royal Crimson Red) */}
+      <div className="bg-[#990000] text-white text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Left Announcement */}
           <div className="flex items-center gap-2 font-medium">
             <ChinaFlag size="sm" />
-            <GraduationCap className="w-4 h-4 text-sky-300" />
+            <GraduationCap className="w-4 h-4 text-amber-300" />
             <span>
               <strong className="text-amber-300">100% CSC Chinese Government Scholarship</strong> Applications Open for 2026/2027 Intakes
             </span>
@@ -68,12 +68,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               <span>JW202 Portal</span>
             </button>
             <div className="flex items-center gap-3 pl-2 border-l border-white/20">
-              <a href="#" className="hover:text-sky-300 transition-colors" aria-label="Facebook">
+              <a href="#" className="hover:text-amber-300 transition-colors" aria-label="Facebook">
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
-              <a href="#" className="hover:text-sky-300 transition-colors" aria-label="Instagram">
+              <a href="#" className="hover:text-amber-300 transition-colors" aria-label="Instagram">
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               {/* Home */}
               <Link
                 href="/"
-                className="text-xs sm:text-sm font-bold text-slate-800 hover:text-[#1E90FF] py-2 transition-colors"
+                className="text-xs sm:text-sm font-bold text-slate-800 hover:text-[#DC2626] py-2 transition-colors"
               >
                 Home
               </Link>
@@ -123,10 +123,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               >
                 <Link
                   href="/destinations"
-                  className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#1E90FF] py-2 flex items-center gap-1 transition-colors"
+                  className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#DC2626] py-2 flex items-center gap-1 transition-colors"
                 >
                   China Cities
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === "cities" ? "rotate-180 text-[#1E90FF]" : ""}`} />
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === "cities" ? "rotate-180 text-[#DC2626]" : ""}`} />
                 </Link>
 
                 <AnimatePresence>
@@ -146,10 +146,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                         <Link
                           key={dest.id}
                           href={`/destinations/${dest.id}`}
-                          className="flex items-center justify-between p-2 rounded-xl hover:bg-[#EAF4FF] transition-colors group"
+                          className="flex items-center justify-between p-2 rounded-xl hover:bg-[#FEF2F2] transition-colors group"
                         >
                           <div>
-                            <p className="text-xs font-bold text-slate-900 group-hover:text-[#1E90FF] flex items-center gap-1.5">
+                            <p className="text-xs font-bold text-slate-900 group-hover:text-[#DC2626] flex items-center gap-1.5">
                               <ChinaFlag size="sm" /> {dest.name}
                             </p>
                             <p className="text-[10px] text-slate-500 font-medium line-clamp-1">{dest.tagline}</p>
@@ -162,7 +162,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                       <div className="pt-2 border-t border-slate-100">
                         <Link
                           href="/destinations"
-                          className="flex items-center justify-between p-2 rounded-xl bg-slate-50 text-xs font-bold text-[#1E90FF] hover:bg-[#EAF4FF] transition-colors"
+                          className="flex items-center justify-between p-2 rounded-xl bg-slate-50 text-xs font-bold text-[#DC2626] hover:bg-[#FEF2F2] transition-colors"
                         >
                           <span>Explore All 15+ China Cities</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -181,10 +181,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               >
                 <Link
                   href="/programs"
-                  className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#1E90FF] py-2 flex items-center gap-1 transition-colors"
+                  className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#DC2626] py-2 flex items-center gap-1 transition-colors"
                 >
                   Programs
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === "programs" ? "rotate-180 text-[#1E90FF]" : ""}`} />
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === "programs" ? "rotate-180 text-[#DC2626]" : ""}`} />
                 </Link>
 
                 <AnimatePresence>
@@ -198,21 +198,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                     >
                       <div className="px-3 py-1.5 text-[10px] font-extrabold text-slate-400 uppercase tracking-wider flex items-center justify-between border-b border-slate-100 pb-2 mb-1">
                         <span>English-Medium Degrees in China</span>
-                        <Stethoscope className="w-3.5 h-3.5 text-[#1E90FF]" />
+                        <Stethoscope className="w-3.5 h-3.5 text-[#DC2626]" />
                       </div>
                       {PROGRAMS.map((prog) => (
                         <Link
                           key={prog.id}
                           href={`/programs/${prog.id}`}
-                          className="flex items-center justify-between p-2 rounded-xl hover:bg-[#EAF4FF] transition-colors group"
+                          className="flex items-center justify-between p-2 rounded-xl hover:bg-[#FEF2F2] transition-colors group"
                         >
                           <div>
-                            <p className="text-xs font-bold text-slate-900 group-hover:text-[#1E90FF]">
+                            <p className="text-xs font-bold text-slate-900 group-hover:text-[#DC2626]">
                               {prog.title}
                             </p>
                             <p className="text-[10px] text-slate-500 font-medium">{prog.duration}</p>
                           </div>
-                          <span className="text-[10px] font-bold text-[#1E90FF] bg-[#EAF4FF] px-2 py-0.5 rounded-full">
+                          <span className="text-[10px] font-bold text-[#DC2626] bg-[#FEF2F2] px-2 py-0.5 rounded-full">
                             {prog.category}
                           </span>
                         </Link>
@@ -220,7 +220,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                       <div className="pt-2 border-t border-slate-100">
                         <Link
                           href="/programs"
-                          className="flex items-center justify-between p-2 rounded-xl bg-slate-50 text-xs font-bold text-[#1E90FF] hover:bg-[#EAF4FF] transition-colors"
+                          className="flex items-center justify-between p-2 rounded-xl bg-slate-50 text-xs font-bold text-[#DC2626] hover:bg-[#FEF2F2] transition-colors"
                         >
                           <span>View All Degree Programs</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -239,10 +239,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               >
                 <Link
                   href="/universities"
-                  className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#1E90FF] py-2 flex items-center gap-1 transition-colors"
+                  className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#DC2626] py-2 flex items-center gap-1 transition-colors"
                 >
                   State Universities
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === "universities" ? "rotate-180 text-[#1E90FF]" : ""}`} />
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === "universities" ? "rotate-180 text-[#DC2626]" : ""}`} />
                 </Link>
 
                 <AnimatePresence>
@@ -262,10 +262,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                         <Link
                           key={uni.id}
                           href={`/universities/${uni.id}`}
-                          className="flex items-center justify-between p-2 rounded-xl hover:bg-[#EAF4FF] transition-colors group"
+                          className="flex items-center justify-between p-2 rounded-xl hover:bg-[#FEF2F2] transition-colors group"
                         >
                           <div>
-                            <p className="text-xs font-bold text-slate-900 group-hover:text-[#1E90FF]">
+                            <p className="text-xs font-bold text-slate-900 group-hover:text-[#DC2626]">
                               {uni.name}
                             </p>
                             <p className="text-[10px] text-slate-500 font-medium flex items-center gap-1">
@@ -280,7 +280,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                       <div className="pt-2 border-t border-slate-100">
                         <Link
                           href="/universities"
-                          className="flex items-center justify-between p-2 rounded-xl bg-slate-50 text-xs font-bold text-[#1E90FF] hover:bg-[#EAF4FF] transition-colors"
+                          className="flex items-center justify-between p-2 rounded-xl bg-slate-50 text-xs font-bold text-[#DC2626] hover:bg-[#FEF2F2] transition-colors"
                         >
                           <span>Browse All 100+ Partner Universities</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -294,7 +294,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               {/* CSC Scholarships Direct Link */}
               <Link
                 href="/scholarships"
-                className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#1E90FF] py-2 transition-colors flex items-center gap-1"
+                className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#DC2626] py-2 transition-colors flex items-center gap-1"
               >
                 <span>CSC Scholarships</span>
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -303,7 +303,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               {/* About Us */}
               <Link
                 href="/about"
-                className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#1E90FF] py-2 transition-colors"
+                className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#DC2626] py-2 transition-colors"
               >
                 About Us
               </Link>
@@ -311,7 +311,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               {/* Contact */}
               <Link
                 href="/contact"
-                className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#1E90FF] py-2 transition-colors"
+                className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#DC2626] py-2 transition-colors"
               >
                 Contact
               </Link>
@@ -323,7 +323,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 href="tel:+861088291000"
                 className="hidden xl:flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold px-3.5 py-2 rounded-full border border-slate-200 transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-[#1E90FF]" />
+                <Phone className="w-3.5 h-3.5 text-[#DC2626]" />
                 <span>+86 10 8829 1000</span>
               </a>
 
@@ -334,7 +334,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 className="text-xs px-5 py-2.5 font-bold shadow-sm"
                 icon={<ArrowRight className="w-4 h-4 ml-1" />}
               >
-                Apply to China
+                Apply Now
               </Button>
             </div>
 
@@ -373,7 +373,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2 rounded-xl text-sm font-bold text-slate-900 hover:bg-[#EAF4FF] hover:text-[#1E90FF]"
+                className="block px-4 py-2 rounded-xl text-sm font-bold text-slate-900 hover:bg-[#FEF2F2] hover:text-[#DC2626]"
               >
                 Home
               </Link>
@@ -385,7 +385,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/destinations"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#EAF4FF] hover:text-[#1E90FF]"
+                  className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#FEF2F2] hover:text-[#DC2626]"
                 >
                   All China Cities & Hubs
                 </Link>
@@ -394,7 +394,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                     key={d.id}
                     href={`/destinations/${d.id}`}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-1.5 px-6 py-1.5 text-xs text-slate-600 hover:text-[#1E90FF]"
+                    className="flex items-center gap-1.5 px-6 py-1.5 text-xs text-slate-600 hover:text-[#DC2626]"
                   >
                     <ChinaFlag size="sm" /> {d.name}
                   </Link>
@@ -406,7 +406,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/programs"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#EAF4FF] hover:text-[#1E90FF]"
+                  className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#FEF2F2] hover:text-[#DC2626]"
                 >
                   All Degree Programs
                 </Link>
@@ -417,7 +417,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/universities"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#EAF4FF] hover:text-[#1E90FF]"
+                  className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#FEF2F2] hover:text-[#DC2626]"
                 >
                   All 100+ Chinese State Universities
                 </Link>
@@ -426,7 +426,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               <Link
                 href="/scholarships"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#EAF4FF] hover:text-[#1E90FF]"
+                className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#FEF2F2] hover:text-[#DC2626]"
               >
                 CSC Scholarships 100%
               </Link>
@@ -434,7 +434,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               <Link
                 href="/about"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#EAF4FF] hover:text-[#1E90FF]"
+                className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#FEF2F2] hover:text-[#DC2626]"
               >
                 About Us
               </Link>
@@ -442,7 +442,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#EAF4FF] hover:text-[#1E90FF]"
+                className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#FEF2F2] hover:text-[#DC2626]"
               >
                 Contact
               </Link>
@@ -452,7 +452,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                   href="tel:+861088291000"
                   className="flex items-center justify-center gap-2 bg-slate-100 py-2.5 rounded-full text-xs font-bold text-slate-800"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#1E90FF]" />
+                  <Phone className="w-3.5 h-3.5 text-[#DC2626]" />
                   <span>+86 10 8829 1000</span>
                 </a>
                 <Button
@@ -465,7 +465,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                   }}
                   icon={<ArrowRight className="w-4 h-4" />}
                 >
-                  Apply to China Now
+                  Apply Now
                 </Button>
               </div>
             </div>

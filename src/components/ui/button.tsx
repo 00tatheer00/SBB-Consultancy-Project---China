@@ -31,25 +31,25 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1E90FF]/40 active:scale-95 disabled:opacity-50 disabled:pointer-events-none";
+      "inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#DC2626]/40 active:scale-95 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap";
 
     const variants = {
       primary:
-        "bg-[#1E90FF] text-white hover:bg-[#0077E6] shadow-sm hover:shadow-md border border-[#1E90FF]",
+        "bg-[#DC2626] text-white hover:bg-[#B91C1C] shadow-sm hover:shadow-md border border-[#DC2626]",
       secondary:
-        "bg-[#EAF4FF] text-[#1E90FF] hover:bg-[#1E90FF] hover:text-white border border-[#1E90FF]/25",
+        "bg-[#FEF2F2] text-[#DC2626] hover:bg-[#DC2626] hover:text-white border border-[#DC2626]/25",
       outline:
-        "bg-white text-slate-800 border border-slate-300 hover:border-[#1E90FF] hover:text-[#1E90FF] shadow-xs",
+        "bg-white text-slate-800 border border-slate-300 hover:border-[#DC2626] hover:text-[#DC2626] shadow-xs",
       ghost:
-        "bg-transparent text-slate-700 hover:bg-slate-100 hover:text-[#1E90FF]",
+        "bg-transparent text-slate-700 hover:bg-slate-100 hover:text-[#DC2626]",
       dark:
         "bg-slate-900 text-white hover:bg-slate-800 shadow-sm border border-slate-800",
     };
 
     const sizes = {
-      sm: "px-4 py-2 text-xs gap-1.5",
-      md: "px-5 py-2.5 text-sm gap-2",
-      lg: "px-7 py-3.5 text-base gap-2.5",
+      sm: "px-4 py-2 text-xs gap-2",
+      md: "px-5 py-2.5 text-sm gap-2.5",
+      lg: "px-8 py-3.5 text-base gap-3",
     };
 
     return (
@@ -60,9 +60,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(baseStyles, variants[variant], sizes[size], className)}
         {...props}
       >
-        {icon && iconPosition === "left" && <span className="inline-flex">{icon}</span>}
-        <span>{children}</span>
-        {icon && iconPosition === "right" && <span className="inline-flex">{icon}</span>}
+        {icon && iconPosition === "left" && <span className="inline-flex items-center shrink-0">{icon}</span>}
+        <span className="inline-flex items-center gap-2 leading-none whitespace-nowrap">{children}</span>
+        {icon && iconPosition === "right" && <span className="inline-flex items-center shrink-0">{icon}</span>}
       </motion.button>
     );
   }

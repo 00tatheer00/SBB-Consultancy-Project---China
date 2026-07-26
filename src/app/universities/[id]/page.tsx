@@ -9,7 +9,8 @@ import { UNIVERSITIES } from "@/data/mock-data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
-import { ArrowLeft, Award, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowLeft, Award, MapPin, ArrowRight } from "lucide-react";
+import { ChinaFlag } from "@/components/ui/china-flag";
 
 export default function UniversityDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -21,7 +22,7 @@ export default function UniversityDetailPage({ params }: { params: Promise<{ id:
     return (
       <main className="min-h-screen pt-40 text-center">
         <h1 className="text-3xl font-bold">University Not Found</h1>
-        <Link href="/universities" className="text-[#1E90FF] underline mt-4 inline-block">Return to Universities Directory</Link>
+        <Link href="/universities" className="text-[#DC2626] underline mt-4 inline-block">Return to Universities Directory</Link>
       </main>
     );
   }
@@ -32,7 +33,7 @@ export default function UniversityDetailPage({ params }: { params: Promise<{ id:
       
       <div className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/universities" className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#1E90FF] mb-6">
+          <Link href="/universities" className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#DC2626] mb-6">
             <ArrowLeft className="w-4 h-4" /> Back to State Universities Directory
           </Link>
 
@@ -45,10 +46,10 @@ export default function UniversityDetailPage({ params }: { params: Promise<{ id:
                   <Award className="w-3.5 h-3.5 text-amber-400" /> QS World Rank #{uni.qsRank}
                 </Badge>
                 <h1 className="text-3xl sm:text-5xl font-extrabold flex items-center gap-3">
-                  {uni.name} 🇨🇳
+                  <span>{uni.name}</span> <ChinaFlag size="lg" />
                 </h1>
                 <p className="text-sm text-slate-300 font-medium flex items-center gap-1.5">
-                  <MapPin className="w-4 h-4 text-[#1E90FF]" /> {uni.city}, {uni.country}
+                  <MapPin className="w-4 h-4 text-[#DC2626]" /> {uni.city}, {uni.country}
                 </p>
               </div>
 
@@ -56,7 +57,7 @@ export default function UniversityDetailPage({ params }: { params: Promise<{ id:
                 variant="primary"
                 size="lg"
                 onClick={() => setBookingOpen(true)}
-                className="text-xs font-bold px-8 shadow-lg shrink-0"
+                className="text-xs font-bold px-8 shadow-lg shrink-0 bg-[#DC2626]"
                 icon={<ArrowRight className="w-4 h-4" />}
               >
                 Apply to {uni.name.split(" ")[0]} Now
@@ -93,7 +94,7 @@ export default function UniversityDetailPage({ params }: { params: Promise<{ id:
                   <span className="text-slate-500 font-medium block">Estimated Tuition:</span>
                   <span className="font-bold text-slate-900 text-sm">{uni.tuitionRange}</span>
                 </div>
-                <Button variant="primary" size="md" onClick={() => setBookingOpen(true)} className="w-full text-xs font-bold">
+                <Button variant="primary" size="md" onClick={() => setBookingOpen(true)} className="w-full text-xs font-bold bg-[#DC2626]">
                   Submit Direct Application
                 </Button>
               </GlassCard>

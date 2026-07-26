@@ -1,48 +1,34 @@
+"use client";
+
 import React from "react";
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
 
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-
-interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: "primary" | "secondary" | "outline" | "accent" | "success" | "dark";
-  size?: "sm" | "md" | "lg";
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "accent" | "success";
+  className?: string;
 }
 
 export const Badge: React.FC<BadgeProps> = ({
   children,
   variant = "primary",
-  size = "md",
-  className,
-  ...props
+  className = "",
 }) => {
-  const variants = {
-    primary: "bg-[#EAF4FF] text-[#1E90FF] border border-[#1E90FF]/25 font-semibold",
-    secondary: "bg-slate-100 text-slate-700 border border-slate-200 font-medium",
-    outline: "bg-white text-slate-700 border border-slate-300 font-medium",
-    accent: "bg-[#1E90FF] text-white font-semibold shadow-sm",
-    success: "bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold",
-    dark: "bg-slate-900 text-white font-semibold",
-  };
+  const baseStyles =
+    "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide transition-all";
 
-  const sizes = {
-    sm: "px-2.5 py-0.5 text-xs rounded-full",
-    md: "px-3 py-1 text-xs rounded-full",
-    lg: "px-4 py-1.5 text-sm rounded-full",
+  const variants = {
+    primary:
+      "bg-[#FEF2F2] text-[#DC2626] border border-[#DC2626]/20 shadow-2xs",
+    secondary:
+      "bg-slate-100 text-slate-700 border border-slate-200/80",
+    accent:
+      "bg-amber-500/10 text-amber-600 border border-amber-500/20",
+    success:
+      "bg-emerald-500/10 text-emerald-600 border border-emerald-500/20",
   };
 
   return (
-    <span
-      className={cn(
-        "inline-flex items-center gap-1.5 transition-all duration-200",
-        variants[variant],
-        sizes[size],
-        className
-      )}
-      {...props}
-    >
+    <span className={`${baseStyles} ${variants[variant]} ${className}`}>
       {children}
     </span>
   );
