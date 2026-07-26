@@ -1,0 +1,224 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Calendar,
+  Star,
+  Users,
+  Building2,
+  Award,
+  Globe2
+} from "lucide-react";
+import { Button } from "./ui/button";
+import { Counter } from "./ui/counter";
+
+interface HeroSectionProps {
+  onOpenBooking: () => void;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
+  const avatars = [
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
+    "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80",
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80",
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=120&q=80",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+  ];
+
+  return (
+    <section id="hero" className="relative pt-36 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-white">
+      {/* Background Graphic & Skyline Photo */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Right Skyline Image */}
+        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-3/5 h-full opacity-90">
+          <img
+            src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=2000&q=80"
+            alt="Shanghai Skyline & International Student"
+            className="w-full h-full object-cover object-right-top"
+          />
+          {/* Seamless White Fade Gradient Left-to-Right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 lg:via-white/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/40" />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[480px]">
+          {/* Left Column Content */}
+          <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
+            {/* Pill Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF4FF] border border-[#1E90FF]/30 text-[#1E90FF] text-xs sm:text-sm font-semibold shadow-xs"
+            >
+              <span>Your Future. Our Mission.</span>
+            </motion.div>
+
+            {/* Main Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="space-y-1"
+            >
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-[1.12]">
+                Study Beyond Borders
+              </h1>
+              <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1E90FF] leading-[1.12]">
+                Build Your Global Future
+              </p>
+            </motion.div>
+
+            {/* Subtitle Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed"
+            >
+              We help ambitious students achieve their dreams by connecting them with world-class universities across the globe.
+            </motion.p>
+
+            {/* Dual CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-1"
+            >
+              {/* Apply Now Primary Button */}
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={onOpenBooking}
+                className="w-full sm:w-auto text-sm px-8 py-3.5 font-bold shadow-md shadow-[#1E90FF]/25 flex items-center justify-center gap-3"
+              >
+                <span>Apply Now</span>
+                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+                  <ArrowRight className="w-3.5 h-3.5 text-white" />
+                </span>
+              </Button>
+
+              {/* Book Free Consultation White Glass Button */}
+              <button
+                onClick={onOpenBooking}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold rounded-full bg-white/90 backdrop-blur-md text-slate-800 border border-slate-200 shadow-sm hover:border-[#1E90FF] hover:text-[#1E90FF] transition-all cursor-pointer"
+              >
+                <Calendar className="w-4 h-4 text-[#1E90FF]" />
+                <span>Book Free Consultation</span>
+              </button>
+            </motion.div>
+
+            {/* Social Proof & Rating Bar */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-xs"
+            >
+              {/* Avatar Stack */}
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-2 overflow-hidden">
+                  {avatars.map((url, i) => (
+                    <img
+                      key={i}
+                      src={url}
+                      alt="Student Avatar"
+                      className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover"
+                    />
+                  ))}
+                </div>
+                <div className="text-left">
+                  <p className="text-[11px] font-medium text-slate-500">Trusted by Students & Parents</p>
+                </div>
+              </div>
+
+              <div className="hidden sm:block h-8 w-px bg-slate-200" />
+
+              {/* Rating Stars */}
+              <div className="flex items-center gap-2">
+                <div className="flex text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-current" />
+                  ))}
+                </div>
+                <span className="font-bold text-slate-800 text-sm">4.9/5</span>
+                <span className="text-slate-500 font-medium text-xs">(2,500+ Reviews)</span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Column Spacer (Skyline image visible) */}
+          <div className="lg:col-span-5 hidden lg:block" />
+        </div>
+
+        {/* Floating Bottom Statistics Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-16 bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200/80 max-w-6xl mx-auto"
+        >
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y lg:divide-y-0 lg:divide-x divide-slate-100">
+            {/* Stat 1 */}
+            <div className="flex items-center gap-4 pl-0 lg:pl-2 pt-2 lg:pt-0">
+              <div className="w-12 h-12 rounded-full bg-[#1E90FF] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1E90FF]/30">
+                <Users className="w-6 h-6" />
+              </div>
+              <div className="text-left">
+                <p className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
+                  <Counter value={5000} suffix="+" />
+                </p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-600">Students Guided</p>
+              </div>
+            </div>
+
+            {/* Stat 2 */}
+            <div className="flex items-center gap-4 pl-0 lg:pl-6 pt-2 lg:pt-0">
+              <div className="w-12 h-12 rounded-full bg-[#1E90FF] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1E90FF]/30">
+                <Building2 className="w-6 h-6" />
+              </div>
+              <div className="text-left">
+                <p className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
+                  <Counter value={100} suffix="+" />
+                </p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-600">Partner Universities</p>
+              </div>
+            </div>
+
+            {/* Stat 3 */}
+            <div className="flex items-center gap-4 pl-0 lg:pl-6 pt-4 lg:pt-0">
+              <div className="w-12 h-12 rounded-full bg-[#1E90FF] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1E90FF]/30">
+                <Award className="w-6 h-6" />
+              </div>
+              <div className="text-left">
+                <p className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
+                  <Counter value={98} suffix="%" />
+                </p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-600">Visa Success Rate</p>
+              </div>
+            </div>
+
+            {/* Stat 4 */}
+            <div className="flex items-center gap-4 pl-0 lg:pl-6 pt-4 lg:pt-0">
+              <div className="w-12 h-12 rounded-full bg-[#1E90FF] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1E90FF]/30">
+                <Globe2 className="w-6 h-6" />
+              </div>
+              <div className="text-left">
+                <p className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
+                  <Counter value={10} suffix="+" />
+                </p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-600">Countries</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
