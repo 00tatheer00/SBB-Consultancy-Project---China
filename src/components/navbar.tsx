@@ -10,8 +10,7 @@ import {
   ArrowRight,
   ChevronDown,
   Menu,
-  X,
-  Plane
+  X
 } from "lucide-react";
 import { Button } from "./ui/button";
 
@@ -114,27 +113,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       {/* 2. Main Navigation Bar */}
       <div
         className={`bg-white border-b transition-all duration-300 ${
-          scrolled ? "border-slate-200 py-2.5 shadow-md" : "border-slate-200/80 py-3.5 shadow-xs"
+          scrolled ? "border-slate-200 py-2.5 shadow-md" : "border-slate-200/80 py-3 shadow-xs"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo Left */}
-            <a href="#hero" className="flex items-center gap-3 group shrink-0">
-              <div className="relative flex items-center justify-center">
-                <div className="relative text-3xl font-black italic tracking-tighter text-[#1E90FF] leading-none flex items-center">
-                  <span>SBB</span>
-                  <Plane className="w-4 h-4 text-sky-400 absolute -top-1 -right-4 rotate-45 animate-pulse" />
-                </div>
-              </div>
-              <div className="flex flex-col justify-center border-l-2 border-slate-200 pl-3">
-                <span className="text-xs font-black tracking-wider text-slate-900 uppercase flex items-center gap-1">
-                  Study Beyond Borders <span className="text-base">🇨🇳</span>
-                </span>
-                <span className="text-[10px] font-semibold text-slate-500">
-                  China Admissions & CSC Scholarship Portal
-                </span>
-              </div>
+            {/* SBB Logo Image Alone (Full Name Removed as Requested) */}
+            <a href="#hero" className="flex items-center group shrink-0 py-0.5">
+              <img
+                src="/sbb-logo.png"
+                alt="SBB - Study Beyond Borders"
+                className="h-11 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+              />
             </a>
 
             {/* Navigation Menu Center */}
