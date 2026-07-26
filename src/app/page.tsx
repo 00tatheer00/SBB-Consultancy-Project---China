@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
-import { DESTINATIONS, PROGRAMS, UNIVERSITIES } from "@/data/mock-data";
+import { DESTINATIONS, PROGRAMS } from "@/data/mock-data";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,7 +12,9 @@ import { ProcessSection } from "@/components/process-section";
 import { StoriesSection } from "@/components/stories-section";
 import { Footer } from "@/components/footer";
 import { BookingModal } from "@/components/booking-modal";
-import { ArrowRight, Sparkles, Globe, Stethoscope, Award, Check } from "lucide-react";
+import { WhatsAppWidget } from "@/components/whatsapp-widget";
+import { ChinaFlag } from "@/components/ui/china-flag";
+import { ArrowRight, Globe, Stethoscope } from "lucide-react";
 
 export default function Home() {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -29,12 +31,14 @@ export default function Home() {
       <section className="py-16 bg-slate-50 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-8 border-b border-slate-200">
-            <div>
+            <div className="text-left">
               <Badge variant="primary" className="mb-2">
                 <Globe className="w-3.5 h-3.5" /> Premier Study Hubs 🇨🇳
               </Badge>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                Featured <span className="text-[#1E90FF]">China University Cities</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 flex items-center gap-2">
+                <span>Featured</span>
+                <span className="text-[#1E90FF]">China University Cities</span>
+                <ChinaFlag size="md" />
               </h2>
             </div>
             <Link
@@ -48,12 +52,14 @@ export default function Home() {
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             {DESTINATIONS.slice(0, 3).map((dest) => (
-              <GlassCard key={dest.id} className="p-0 overflow-hidden border border-slate-200 bg-white shadow-xs group">
+              <GlassCard key={dest.id} className="p-0 overflow-hidden border border-slate-200 bg-white shadow-xs group text-left">
                 <div className="relative h-48 w-full overflow-hidden">
-                  <img src={dest.image} alt={dest.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={dest.image} alt={dest.name} className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
                   <div className="absolute bottom-3 left-4 text-white">
-                    <h3 className="text-xl font-bold">🇨🇳 {dest.name}</h3>
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      <ChinaFlag size="sm" /> {dest.name}
+                    </h3>
                     <p className="text-xs text-slate-300 font-medium">{dest.tagline}</p>
                   </div>
                 </div>
@@ -75,12 +81,14 @@ export default function Home() {
       <section className="py-16 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-8 border-b border-slate-200">
-            <div>
+            <div className="text-left">
               <Badge variant="primary" className="mb-2">
                 <Stethoscope className="w-3.5 h-3.5" /> English-Medium Degrees 🇨🇳
               </Badge>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                Top Degree <span className="text-[#1E90FF]">Programs in China</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 flex items-center gap-2">
+                <span>Top Degree</span>
+                <span className="text-[#1E90FF]">Programs in China</span>
+                <ChinaFlag size="md" />
               </h2>
             </div>
             <Link
@@ -94,7 +102,7 @@ export default function Home() {
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             {PROGRAMS.slice(0, 3).map((prog) => (
-              <GlassCard key={prog.id} className="p-6 border border-slate-200 bg-white shadow-xs flex flex-col justify-between">
+              <GlassCard key={prog.id} className="p-6 border border-slate-200 bg-white shadow-xs flex flex-col justify-between text-left">
                 <div className="space-y-3">
                   <Badge variant="accent" className="text-[10px]">{prog.category}</Badge>
                   <h3 className="text-base font-bold text-slate-900 leading-snug">{prog.title}</h3>
@@ -116,7 +124,10 @@ export default function Home() {
       <section className="py-12 bg-[#003875] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <Badge variant="accent" className="mx-auto">100% Full CSC Scholarship Applications Open</Badge>
-          <h2 className="text-2xl sm:text-4xl font-extrabold">Study in China With Zero Tuition & Free En-Suite Dormitory</h2>
+          <h2 className="text-2xl sm:text-4xl font-extrabold flex items-center justify-center gap-2">
+            <span>Study in China With Zero Tuition & Free En-Suite Dormitory</span>
+            <ChinaFlag size="md" />
+          </h2>
           <p className="text-xs sm:text-sm text-slate-200 max-w-2xl mx-auto">
             100% Tuition Exemption + Free Campus Accommodation + Monthly Stipend (CNY 2,500 - 3,500/mo) + Medical Insurance.
           </p>
@@ -142,6 +153,9 @@ export default function Home() {
 
       {/* Booking Consultation Modal Drawer */}
       <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
+
+      {/* Floating 1-Click WhatsApp Support Widget */}
+      <WhatsAppWidget onOpenBooking={() => setBookingOpen(true)} />
     </main>
   );
 }

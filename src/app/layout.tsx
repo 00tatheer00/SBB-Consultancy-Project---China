@@ -9,23 +9,23 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Study Beyond Borders (SBB) | Your Gateway to Global Education",
-  description: "Premier international education consultancy offering expert guidance for foreign university admissions, 100% scholarships, visa assistance, and global career pathways in China, UK, Europe, Turkey, Malaysia, Australia, and Canada.",
+  title: "Study Beyond Borders (SBB) | China Admissions & 100% CSC Scholarships",
+  description: "Official international education consultancy connecting students to 100+ top-ranked state universities across China with 100% CSC Government Scholarships, WHO accredited MBBS, engineering, and 99% JW202 visa success.",
   keywords: [
-    "International Education Consultancy",
-    "Study Abroad Agency",
-    "Global University Admissions",
-    "MBBS Abroad Scholarships",
-    "Study in China Scholarships",
-    "UK University Guidance",
-    "Student Visa Advisory"
+    "Study in China Consultancy",
+    "CSC Chinese Government Scholarship",
+    "MBBS in China WHO Accredited",
+    "Tsinghua Peking University Admissions",
+    "Zhejiang University MBBS",
+    "JW202 Visa Form Application",
+    "Shanghai Government Scholarship"
   ],
   authors: [{ name: "Study Beyond Borders" }],
   openGraph: {
-    title: "Study Beyond Borders | Your Gateway to Global Education",
-    description: "Handcrafted global education consulting. 5000+ Students Guided, 98% Visa Success Rate, 100+ Partner Universities.",
+    title: "Study Beyond Borders | China Admissions & 100% CSC Scholarships Portal",
+    description: "5,000+ Students Guided to China, 99% JW202 Visa Success Rate, 100+ Partner Chinese State Universities.",
     url: "https://studybeyondborders.com",
-    siteName: "Study Beyond Borders",
+    siteName: "Study Beyond Borders 🇨🇳",
     locale: "en_US",
     type: "website",
   },
