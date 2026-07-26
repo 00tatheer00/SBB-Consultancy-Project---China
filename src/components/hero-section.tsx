@@ -36,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-3/5 h-full opacity-90">
           <img
             src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=2000&q=80"
-            alt="Shanghai Skyline & International Student"
+            alt="Shanghai Skyline & Chinese State University Campus"
             className="w-full h-full object-cover object-right-top"
           />
           {/* Seamless White Fade Gradient Left-to-Right */}
@@ -56,7 +56,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.4 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF4FF] border border-[#1E90FF]/30 text-[#1E90FF] text-xs sm:text-sm font-semibold shadow-xs"
             >
-              <span>Your Future. Our Mission.</span>
+              <span>🇨🇳 Official China University Admissions Portal</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -67,7 +67,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               className="space-y-1"
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-[1.12]">
-                Study Beyond Borders
+                Study in China 🇨🇳
               </h1>
               <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1E90FF] leading-[1.12]">
                 Build Your Global Future
@@ -81,7 +81,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.4, delay: 0.2 }}
               className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed"
             >
-              We help ambitious students achieve their dreams by connecting them with world-class universities across the globe.
+              We help ambitious international students secure admissions and 100% CSC Full Government Scholarships across China's top-ranked state universities.
             </motion.p>
 
             {/* Dual CTA Buttons */}
@@ -98,7 +98,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 onClick={onOpenBooking}
                 className="w-full sm:w-auto text-sm px-8 py-3.5 font-bold shadow-md shadow-[#1E90FF]/25 flex items-center justify-center gap-3"
               >
-                <span>Apply Now</span>
+                <span>Apply to China Now</span>
                 <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                   <ArrowRight className="w-3.5 h-3.5 text-white" />
                 </span>
@@ -128,7 +128,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                     <img
                       key={i}
                       src={url}
-                      alt="Student Avatar"
+                      alt="China Student Avatar"
                       className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover"
                     />
                   ))}
@@ -148,12 +148,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   ))}
                 </div>
                 <span className="font-bold text-slate-800 text-sm">4.9/5</span>
-                <span className="text-slate-500 font-medium text-xs">(2,500+ Reviews)</span>
+                <span className="text-slate-500 font-medium text-xs">(2,500+ China Reviews)</span>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Column Spacer (Skyline image visible) */}
+          {/* Right Column Spacer */}
           <div className="lg:col-span-5 hidden lg:block" />
         </div>
 
@@ -174,7 +174,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 <p className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
                   <Counter value={5000} suffix="+" />
                 </p>
-                <p className="text-xs sm:text-sm font-semibold text-slate-600">Students Guided</p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-600">Students Guided to China</p>
               </div>
             </div>
 
@@ -187,7 +187,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 <p className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
                   <Counter value={100} suffix="+" />
                 </p>
-                <p className="text-xs sm:text-sm font-semibold text-slate-600">Partner Universities</p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-600">Chinese Partner Unis</p>
               </div>
             </div>
 
@@ -198,9 +198,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </div>
               <div className="text-left">
                 <p className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
-                  <Counter value={98} suffix="%" />
+                  <Counter value={99} suffix="%" />
                 </p>
-                <p className="text-xs sm:text-sm font-semibold text-slate-600">Visa Success Rate</p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-600">JW202 Visa Success</p>
               </div>
             </div>
 
@@ -211,9 +211,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </div>
               <div className="text-left">
                 <p className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
-                  <Counter value={10} suffix="+" />
+                  <Counter value={15} suffix="+" />
                 </p>
-                <p className="text-xs sm:text-sm font-semibold text-slate-600">Countries</p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-600">China Academic Cities</p>
               </div>
             </div>
           </div>

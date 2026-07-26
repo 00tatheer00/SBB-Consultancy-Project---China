@@ -34,7 +34,7 @@ export interface University {
   city: string;
   logoBg: string;
   image: string;
-  scholarshipTier: "100% Full" | "50% Partial" | "Merit Waiver";
+  scholarshipTier: "100% CSC Full" | "Provincial Full" | "Merit Waiver";
   tuitionRange: string;
   popularFields: string[];
   accreditation: string;
@@ -48,7 +48,7 @@ export interface Scholarship {
   benefits: string[];
   deadline: string;
   eligibility: string;
-  badge: "100% Full" | "Partial" | "Merit" | "Government";
+  badge: "100% Full" | "Government" | "Provincial" | "Merit";
 }
 
 export interface SuccessStory {
@@ -86,197 +86,197 @@ export interface ProcessStep {
 }
 
 export const STATS = [
-  { value: 5000, suffix: "+", label: "Students Guided", detail: "Successfully placed in global universities" },
-  { value: 100, suffix: "+", label: "Partner Universities", detail: "Direct official admission representations" },
-  { value: 98, suffix: "%", label: "Visa Success Rate", detail: "Industry-leading embassy approval ratio" },
-  { value: 10, suffix: "+", label: "Global Destinations", detail: "Premier study hubs across 4 continents" },
+  { value: 5000, suffix: "+", label: "Students Guided to China", detail: "Placed in Chinese state universities with JW202 visa approval" },
+  { value: 100, suffix: "+", label: "Chinese Partner Universities", detail: "Direct official admission representations with WHO recognition" },
+  { value: 99, suffix: "%", label: "JW202 Visa Success Rate", detail: "Industry leading Chinese embassy visa approval ratio" },
+  { value: 15, suffix: "+", label: "Academic Hub Cities", detail: "Beijing, Shanghai, Hangzhou, Nanjing, Wuhan, Guangzhou & more" },
 ];
 
 export const DESTINATIONS: Destination[] = [
   {
-    id: "china",
-    name: "China",
-    region: "Asia",
+    id: "hangzhou",
+    name: "Hangzhou Hub",
+    region: "East China",
     flag: "🇨🇳",
     image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1200&q=80",
-    tagline: "World-Class Infrastructure & Full Government Scholarships",
-    featuredPrograms: ["MBBS (English)", "Software Engineering", "Civil Engineering", "Biotechnology"],
-    avgTuition: "$2,500 - $4,500 / year",
-    scholarshipsAvailable: "100% Full Tuition + Free Dorm + Monthly Stipend (CSC & Provincial)",
-    visaSuccessRate: "99.2%",
-    popularCities: ["Hangzhou", "Nanjing", "Shanghai", "Wuhan", "Beijing"],
-    highlights: ["WHO & WFME Recognized Medical Unis", "Zero HSK requirement for year 1", "Modern High-Tech Labs"]
+    tagline: "Home of Zhejiang University & China's Silicon Valley Tech Hub",
+    featuredPrograms: ["MBBS (Clinical Medicine)", "Software Engineering", "AI & Data Science", "Biotechnology"],
+    avgTuition: "CNY 18,000 - 30,000 / year ($2,500 - $4,200)",
+    scholarshipsAvailable: "100% Full CSC Government & Zhejiang Provincial Scholarships (Stipend CNY 2,500/mo)",
+    visaSuccessRate: "99.5%",
+    popularCities: ["Zhejiang Univ (QS #44)", "Zhejiang Tech Univ", "Hangzhou Dianzi Univ"],
+    highlights: ["WHO & ECFMG Accredited Medical Campus", "Headquarters of Alibaba & High-Tech Parks", "Vibrant International Student Community"]
   },
   {
-    id: "uk",
-    name: "United Kingdom",
-    region: "Europe",
-    flag: "🇬🇧",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
-    tagline: "Academic Prestige & 2-Year Post-Study Graduate Visa",
-    featuredPrograms: ["MSc Data Science", "MBA", "International Law", "Finance & Fintech"],
-    avgTuition: "£12,000 - £22,000 / year",
-    scholarshipsAvailable: "Up to £5,000 Merit Bursaries & Chevening Grants",
-    visaSuccessRate: "97.8%",
-    popularCities: ["London", "Manchester", "Birmingham", "Edinburgh"],
-    highlights: ["1-Year Master's Degrees", "2-Year PSW Work Rights", "Russell Group Prestige"]
-  },
-  {
-    id: "turkey",
-    name: "Turkey",
-    region: "Europe/Asia",
-    flag: "🇹🇷",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=80",
-    tagline: "European Standard Education at Affordable Tuition",
-    featuredPrograms: ["Dentistry (BDS)", "MBBS", "Pharmacy", "Architecture"],
-    avgTuition: "$3,000 - $7,500 / year",
-    scholarshipsAvailable: "Türkiye Bursları 100% Full Scholarship & University Waivers",
-    visaSuccessRate: "98.5%",
-    popularCities: ["Istanbul", "Ankara", "Izmir", "Bursa"],
-    highlights: ["No IELTS mandatory for many unis", "EU Bologna Process Alignment", "Vibrant Mediterranean Lifestyle"]
-  },
-  {
-    id: "malaysia",
-    name: "Malaysia",
-    region: "Asia",
-    flag: "🇲🇾",
-    image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80",
-    tagline: "Global Branch Campuses & Twinning Dual Degrees",
-    featuredPrograms: ["Computer Science", "Business Administration", "Engineering", "Culinary Management"],
-    avgTuition: "$4,000 - $8,000 / year",
-    scholarshipsAvailable: "20% - 50% Academic Merit Waivers",
+    id: "beijing",
+    name: "Beijing Capital Hub",
+    region: "North China",
+    flag: "🇨🇳",
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
+    tagline: "Academic Prestige & Top 20 Global Universities (Tsinghua & Peking)",
+    featuredPrograms: ["Civil & Structural Engineering", "International MBA", "Computer Science", "Public Health"],
+    avgTuition: "CNY 22,000 - 35,000 / year ($3,000 - $4,800)",
+    scholarshipsAvailable: "100% Full CSC Type A & B Grants + Beijing Belt & Road Fellowship",
     visaSuccessRate: "99.0%",
-    popularCities: ["Kuala Lumpur", "Penang", "Johor Bahru"],
-    highlights: ["UK/Australian Dual Degrees", "Affordable Living Costs", "100% English Medium"]
+    popularCities: ["Tsinghua Univ (QS #20)", "Peking Univ (QS #14)", "Capital Medical Univ"],
+    highlights: ["China's Capital Cultural & Political Heart", "Top Ranked State Labs & Medical Hospitals", "Direct Embassy & Ministry Access"]
   },
   {
-    id: "europe",
-    name: "Europe (Germany/Hungary)",
-    region: "Europe",
-    flag: "🇪🇺",
-    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80",
-    tagline: "Low/No Tuition & Schengen Access Across 27 Countries",
-    featuredPrograms: ["Automotive Engineering", "Biomedical Sciences", "Computer Science", "Renewable Energy"],
-    avgTuition: "€0 - €4,500 / year",
-    scholarshipsAvailable: "Stipendium Hungaricum 100% & DAAD Fellowships",
-    visaSuccessRate: "96.5%",
-    popularCities: ["Munich", "Berlin", "Budapest", "Vienna"],
-    highlights: ["Tuition-Free Public German Unis", "Travel Across Schengen Zone", "High Quality of Life"]
+    id: "shanghai",
+    name: "Shanghai Financial Hub",
+    region: "East China",
+    flag: "🇨🇳",
+    image: "https://images.unsplash.com/photo-1538428494232-9c0d8a3ab396?auto=format&fit=crop&w=1200&q=80",
+    tagline: "Global Megacity & Financial Capital of Asia (Fudan & SJTU)",
+    featuredPrograms: ["Finance & Fintech", "BDS (Dentistry)", "Robotics Engineering", "International Law"],
+    avgTuition: "CNY 24,000 - 38,000 / year ($3,300 - $5,200)",
+    scholarshipsAvailable: "Shanghai Government Scholarship (SGS Class A Full Waiver + Allowance)",
+    visaSuccessRate: "99.2%",
+    popularCities: ["Fudan Univ (QS #39)", "Shanghai Jiao Tong (QS #45)", "Tongji Univ"],
+    highlights: ["World's #1 Transport & Financial Infrastructure", "High English Fluency & Foreign Corporate Internships", "Modern Metro & Halal Dining Networks"]
   },
   {
-    id: "australia",
-    name: "Australia",
-    region: "Oceania",
-    flag: "🇦🇺",
-    image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=80",
-    tagline: "World Top 50 Universities & 3 to 5 Year Work Permits",
-    featuredPrograms: ["Cybersecurity", "Nursing & Healthcare", "Civil Engineering", "Data Analytics"],
-    avgTuition: "AU$20,000 - AU$36,000 / year",
-    scholarshipsAvailable: "Destination Australia & International Excellence Grants",
-    visaSuccessRate: "96.0%",
-    popularCities: ["Sydney", "Melbourne", "Brisbane", "Perth"],
-    highlights: ["High Minimum Wage for Part-time", "Long Post-Study Work Visa", "Group of Eight Excellence"]
+    id: "nanjing",
+    name: "Nanjing Educational Hub",
+    region: "East China",
+    flag: "🇨🇳",
+    image: "https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=1200&q=80",
+    tagline: "Historic Academic Capital & Premier Medical Specialization Hub",
+    featuredPrograms: ["MBBS (English)", "PharmD (Pharmaceutical Science)", "Electrical Engineering"],
+    avgTuition: "CNY 19,000 - 28,000 / year ($2,600 - $3,900)",
+    scholarshipsAvailable: "100% Full CSC & Jiangsu Jasmine Provincial Full Grant",
+    visaSuccessRate: "99.3%",
+    popularCities: ["Nanjing Univ (QS #141)", "Southeast Univ", "China Pharmaceutical Univ"],
+    highlights: ["China's Top Ranked Pharmacy Research Center", "Affordable Campus Dormitories", "Rich Historic Heritage & Green Parks"]
   },
   {
-    id: "canada",
-    name: "Canada",
-    region: "Americas",
-    flag: "🇨🇦",
-    image: "https://images.unsplash.com/photo-1517935703375-2519793910c0?auto=format&fit=crop&w=1200&q=80",
-    tagline: "Co-op Paid Internships & Clear Immigration Pathways",
-    featuredPrograms: ["AI & Machine Learning", "Healthcare Administration", "Business Analytics", "Robotics"],
-    avgTuition: "CA$18,000 - CA$32,000 / year",
-    scholarshipsAvailable: "Entrance Scholarships up to CA$10,000",
-    visaSuccessRate: "95.5%",
-    popularCities: ["Toronto", "Vancouver", "Montreal", "Calgary"],
-    highlights: ["Paid Co-op Work Semesters", "3-Year Post Graduation Work Permit (PGWP)", "Permanent Residency Opportunities"]
+    id: "wuhan",
+    name: "Wuhan Central Engineering Hub",
+    region: "Central China",
+    flag: "🇨🇳",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    tagline: "Largest Student City in China & High-Tech Optics Valley",
+    featuredPrograms: ["MBBS", "Mechanical Engineering", "Software Engineering", "Nursing"],
+    avgTuition: "CNY 16,000 - 25,000 / year ($2,200 - $3,500)",
+    scholarshipsAvailable: "100% Full CSC + Wuhan Municipal Government Scholarship",
+    visaSuccessRate: "99.6%",
+    popularCities: ["Wuhan Univ (QS #194)", "Huazhong Univ of Sci & Tech (HUST)", "Wuhan Tech"],
+    highlights: ["Over 1 Million University Students", "WHO Approved Medical Affiliated Teaching Hospitals", "Ultra-Low Cost of Living"]
+  },
+  {
+    id: "guangzhou",
+    name: "Guangzhou & Southern Hub",
+    region: "South China",
+    flag: "🇨🇳",
+    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80",
+    tagline: "Canton Trade Hub & Warm Tropical Coastal Climate",
+    featuredPrograms: ["International Trade & E-Commerce", "BDS (Dentistry)", "Chemical Engineering"],
+    avgTuition: "CNY 20,000 - 32,000 / year ($2,800 - $4,400)",
+    scholarshipsAvailable: "Guangdong Provincial Government Scholarship + University Grants",
+    visaSuccessRate: "99.1%",
+    popularCities: ["Sun Yat-sen Univ", "South China Univ of Tech", "Jinan Univ"],
+    highlights: ["Host of World Canton Trade Fair", "Direct Proximity to Hong Kong & Macao", "Warm Mild Climate Year Round"]
+  },
+  {
+    id: "xian",
+    name: "Xi'an Silk Road Hub",
+    region: "Northwest China",
+    flag: "🇨🇳",
+    image: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1200&q=80",
+    tagline: "Ancient Silk Road Gateway & Heavy Machinery Technical Excellence",
+    featuredPrograms: ["Aeronautics & Mechanical Engineering", "MBBS", "Architecture", "Computer Science"],
+    avgTuition: "CNY 15,000 - 24,000 / year ($2,100 - $3,300)",
+    scholarshipsAvailable: "Xi'an Silk Road 100% Full Scholarship + CSC Type B",
+    visaSuccessRate: "99.4%",
+    popularCities: ["Xi'an Jiaotong Univ (QS #295)", "Northwestern Polytechnical Univ"],
+    highlights: ["Official Silk Road Belt & Road Partner", "Famous Terracotta Warriors Heritage", "Vibrant Halal Food Street & Culture"]
   }
 ];
 
 export const PROGRAMS: Program[] = [
   {
-    id: "mbbs",
-    title: "MBBS (Bachelor of Medicine & Bachelor of Surgery)",
+    id: "mbbs-china",
+    title: "MBBS (Bachelor of Medicine & Bachelor of Surgery) in China",
     category: "Medical",
-    duration: "5 - 6 Years (Including Internship)",
+    duration: "6 Years (5 Years Academic + 1 Year Clinical Internship)",
     iconName: "Stethoscope",
-    description: "Globally accredited medical program taught entirely in English. Fully compliant with WHO, ECFMG, GMC UK, and NMC guidelines.",
-    careerPathways: ["Hospital Physician", "Medical Researcher", "Surgical Specialist", "Global Health Officer"],
+    description: "Globally accredited medical degree taught entirely in English at MOE-approved Chinese state universities. Fully compliant with WHO, ECFMG (USA), GMC (UK), and national medical licensing boards.",
+    careerPathways: ["Hospital Physician", "Medical Specialist", "USMLE / PLAB Practitioner", "Global Health Officer"],
     startingSalary: "$65,000 - $120,000 / yr",
-    topCountries: ["China", "Turkey", "Malaysia", "Hungary"],
-    prerequisites: "Biology & Chemistry 70%+ in High School / FSc / A-Levels"
+    topCountries: ["Zhejiang University", "Capital Medical", "Wuhan University", "Nanjing Medical"],
+    prerequisites: "FSc Pre-Medical / High School Biology & Chemistry 70%+"
   },
   {
-    id: "bds",
-    title: "BDS (Bachelor of Dental Surgery)",
+    id: "bds-china",
+    title: "BDS (Bachelor of Dental Surgery) in China",
     category: "Medical",
-    duration: "5 Years",
+    duration: "5 Years (Taught 100% in English)",
     iconName: "Smile",
-    description: "Hands-on clinical dental training with state-of-the-art simulation labs and modern orthodontic technique instruction.",
-    careerPathways: ["Orthodontist", "Dental Surgeon", "Cosmetic Dentist", "Clinic Owner"],
+    description: "Advanced clinical dental training with 3D dental simulation technology, digital orthodontics, and hospital rotations in China's top dental state clinics.",
+    careerPathways: ["Orthodontist", "Dental Surgeon", "Cosmetic Dentist", "Clinic Director"],
     startingSalary: "$60,000 - $110,000 / yr",
-    topCountries: ["Turkey", "China", "Malaysia", "UK"],
-    prerequisites: "High School Pre-Medical background with strong Chemistry & Biology"
+    topCountries: ["Shanghai Jiao Tong", "Fudan University", "Sun Yat-sen University"],
+    prerequisites: "High School Pre-Medical stream with strong Chemistry & Biology"
   },
   {
-    id: "pharmacy",
-    title: "PharmD / Bachelor of Pharmacy",
-    category: "Medical",
-    duration: "4 - 5 Years",
-    iconName: "Pill",
-    description: "Comprehensive pharmaceutical science, pharmacology, clinical trial design, and hospital pharmacy residency training.",
-    careerPathways: ["Clinical Pharmacist", "Pharmaceutical R&D Specialist", "Drug Safety Officer"],
-    startingSalary: "$55,000 - $95,000 / yr",
-    topCountries: ["China", "UK", "Turkey", "Australia"],
-    prerequisites: "Pre-Medical or High School Science stream"
+    id: "cs-ai-china",
+    title: "BSc / MSc Computer Science & Artificial Intelligence",
+    category: "Technology",
+    duration: "4 Years (Bachelor) / 2.5 Years (Master)",
+    iconName: "Terminal",
+    description: "World-leading computing curriculum integrated with Hangzhou & Shanghai tech giants (Alibaba, Tencent, Huawei). Focus on AI, Cloud Computing, and Robotics.",
+    careerPathways: ["AI Researcher", "Cloud Engineer", "Full Stack Developer", "Data Scientist"],
+    startingSalary: "$70,000 - $130,000 / yr",
+    topCountries: ["Tsinghua University", "Zhejiang University", "Peking University", "SJTU"],
+    prerequisites: "Strong High School Mathematics & Physics foundation"
   },
   {
-    id: "nursing",
-    title: "BSc Nursing & Healthcare Science",
-    category: "Medical",
-    duration: "4 Years",
-    iconName: "HeartPulse",
-    description: "High-demand healthcare discipline with guaranteed international employment prospects and fast-track residency pathways.",
-    careerPathways: ["Registered Nurse (RN)", "ICU Specialist Nurse", "Healthcare Manager"],
-    startingSalary: "$50,000 - $90,000 / yr",
-    topCountries: ["Australia", "UK", "Canada", "Malaysia"],
-    prerequisites: "High School Diploma / Science background"
-  },
-  {
-    id: "engineering",
-    title: "BEng / MEng Software & Civil Engineering",
+    id: "engineering-china",
+    title: "BEng Software, Civil & Mechanical Engineering",
     category: "Engineering",
-    duration: "3 - 4 Years",
+    duration: "4 Years",
     iconName: "Cpu",
-    description: "Cutting-edge engineering curricula integrating AI tools, smart infrastructure design, and robotics engineering.",
-    careerPathways: ["Structural Engineer", "Systems Architect", "Robotics Lead", "Project Manager"],
+    description: "Study under China's world-famous infrastructure engineers. Hands-on access to state key laboratories, high-speed rail design, and smart automation.",
+    careerPathways: ["Structural Engineer", "Robotics Lead", "Project Manager", "Systems Architect"],
     startingSalary: "$60,000 - $105,000 / yr",
-    topCountries: ["Germany", "China", "UK", "Canada"],
+    topCountries: ["Tsinghua University", "SEU Nanjing", "HUST Wuhan", "Tongji Shanghai"],
     prerequisites: "Mathematics & Physics background"
   },
   {
-    id: "cs-ai",
-    title: "BSc / MSc Computer Science & Artificial Intelligence",
-    category: "Technology",
-    duration: "3 - 4 Years",
-    iconName: "Terminal",
-    description: "Advanced computing, machine learning, cloud architecture, and cybersecurity engineering with industry partner projects.",
-    careerPathways: ["AI Researcher", "Full Stack Developer", "Cloud Security Engineer", "Data Scientist"],
-    startingSalary: "$70,000 - $130,000 / yr",
-    topCountries: ["UK", "Canada", "China", "Australia", "Germany"],
-    prerequisites: "Strong Mathematics foundation"
+    id: "pharmacy-china",
+    title: "PharmD / Bachelor of Pharmaceutical Science",
+    category: "Medical",
+    duration: "4 - 5 Years",
+    iconName: "Pill",
+    description: "Comprehensive pharmaceutical science and clinical trial design at China Pharmaceutical University (CPU), global leader in pharmaceutical research.",
+    careerPathways: ["Clinical Pharmacist", "Drug Safety Officer", "Pharma R&D Specialist"],
+    startingSalary: "$55,000 - $95,000 / yr",
+    topCountries: ["China Pharmaceutical Univ", "Zhejiang Univ", "Peking University"],
+    prerequisites: "High School Pre-Medical or Chemistry background"
   },
   {
-    id: "mba",
-    title: "MBA & MSc International Business",
+    id: "nursing-china",
+    title: "BSc Nursing & International Healthcare Management",
+    category: "Medical",
+    duration: "4 Years",
+    iconName: "HeartPulse",
+    description: "WHO-recognized international nursing qualifications preparing graduates for high-demand healthcare careers in foreign and Sino-foreign hospitals.",
+    careerPathways: ["Registered Nurse (RN)", "ICU Head Nurse", "Clinical Hospital Manager"],
+    startingSalary: "$50,000 - $90,000 / yr",
+    topCountries: ["Peking Union Medical", "Central South Univ", "Zhejiang Univ"],
+    prerequisites: "High School Diploma / Biology background"
+  },
+  {
+    id: "mba-china",
+    title: "MBA & MSc International Business in China",
     category: "Business",
-    duration: "1 - 2 Years",
+    duration: "2 Years",
     iconName: "TrendingUp",
-    description: "Executive business leadership, cross-border corporate strategy, financial analytics, and tech venture creation.",
-    careerPathways: ["Management Consultant", "Investment Banker", "Product Manager", "Entrepreneur"],
+    description: "Cross-border e-commerce, global supply chain, and Chinese business ecosystem executive training taught at Asia's premier business schools.",
+    careerPathways: ["Supply Chain Director", "Management Consultant", "Tech Venture Entrepreneur"],
     startingSalary: "$75,000 - $140,000 / yr",
-    topCountries: ["UK", "Canada", "Australia", "Malaysia"],
-    prerequisites: "Bachelor degree in any field + leadership interest"
+    topCountries: ["CEIBS Shanghai", "Tsinghua SEM", "Peking Guanghua", "Fudan School of Management"],
+    prerequisites: "Bachelor Degree in any field"
   }
 ];
 
@@ -289,236 +289,235 @@ export const UNIVERSITIES: University[] = [
     city: "Beijing",
     logoBg: "bg-purple-900",
     image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
-    scholarshipTier: "100% Full",
-    tuitionRange: "$3,800 / yr (Waiver available)",
-    popularFields: ["Computer Science", "Engineering", "Business"],
-    accreditation: "Ministry of Education China / World Top 20"
+    scholarshipTier: "100% CSC Full",
+    tuitionRange: "CNY 28,000 / yr (CSC 100% Grant)",
+    popularFields: ["Computer Science", "Engineering", "Architecture"],
+    accreditation: "MOE China / World Top 20 State University"
+  },
+  {
+    id: "peking",
+    name: "Peking University",
+    qsRank: 14,
+    country: "China",
+    city: "Beijing",
+    logoBg: "bg-red-950",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    scholarshipTier: "100% CSC Full",
+    tuitionRange: "CNY 26,000 / yr (CSC Type A)",
+    popularFields: ["International Relations", "Medicine", "Economics"],
+    accreditation: "Premier National University of China"
   },
   {
     id: "zhejiang",
-    name: "Zhejiang University",
+    name: "Zhejiang University (ZJU)",
     qsRank: 44,
     country: "China",
     city: "Hangzhou",
     logoBg: "bg-blue-900",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
-    scholarshipTier: "100% Full",
-    tuitionRange: "$4,200 / yr (CSC Grant)",
-    popularFields: ["MBBS", "Software Engineering", "Biomedical"],
-    accreditation: "WHO / ECFMG Approved Medical Campus"
+    image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80",
+    scholarshipTier: "100% CSC Full",
+    tuitionRange: "CNY 24,000 / yr (Full Tuition Waiver)",
+    popularFields: ["MBBS (Medicine)", "Software Engineering", "AI"],
+    accreditation: "WHO / ECFMG Approved Top 50 Global Campus"
   },
   {
-    id: "manchester",
-    name: "University of Manchester",
-    qsRank: 32,
-    country: "United Kingdom",
-    city: "Manchester",
-    logoBg: "bg-purple-950",
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
-    scholarshipTier: "50% Partial",
-    tuitionRange: "£19,500 / yr",
-    popularFields: ["Fintech", "Data Science", "Law"],
-    accreditation: "Russell Group Member"
-  },
-  {
-    id: "um",
-    name: "Universiti Malaya (UM)",
-    qsRank: 60,
-    country: "Malaysia",
-    city: "Kuala Lumpur",
-    logoBg: "bg-amber-800",
-    image: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=800&q=80",
-    scholarshipTier: "Merit Waiver",
-    tuitionRange: "$4,500 / yr",
-    popularFields: ["Medicine", "Computer Science", "Economics"],
-    accreditation: "Premier National University of Malaysia"
-  },
-  {
-    id: "istanbul",
-    name: "Istanbul University",
-    qsRank: 700,
-    country: "Turkey",
-    city: "Istanbul",
-    logoBg: "bg-red-900",
-    image: "https://images.unsplash.com/photo-1527838832700-54595d244535?auto=format&fit=crop&w=800&q=80",
-    scholarshipTier: "100% Full",
-    tuitionRange: "$3,200 / yr",
-    popularFields: ["Dentistry (BDS)", "MBBS", "Pharmacy"],
-    accreditation: "Bologna EU Accord Standard"
-  },
-  {
-    id: "tum",
-    name: "Technical University of Munich (TUM)",
-    qsRank: 28,
-    country: "Germany",
-    city: "Munich",
+    id: "fudan",
+    name: "Fudan University",
+    qsRank: 39,
+    country: "China",
+    city: "Shanghai",
     logoBg: "bg-sky-900",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=800&q=80",
-    scholarshipTier: "100% Full",
-    tuitionRange: "€0 (Public Tuition-Free)",
-    popularFields: ["Automotive Engineering", "AI", "Physics"],
-    accreditation: "German Excellence University"
+    image: "https://images.unsplash.com/photo-1538428494232-9c0d8a3ab396?auto=format&fit=crop&w=800&q=80",
+    scholarshipTier: "100% CSC Full",
+    tuitionRange: "CNY 30,000 / yr (Shanghai Gov Grant)",
+    popularFields: ["Clinical Medicine", "Journalism", "MBA"],
+    accreditation: "C9 League Member / MOE Key Campus"
   },
   {
-    id: "melbourne",
-    name: "University of Melbourne",
-    qsRank: 14,
-    country: "Australia",
-    city: "Melbourne",
+    id: "sjtu",
+    name: "Shanghai Jiao Tong University",
+    qsRank: 45,
+    country: "China",
+    city: "Shanghai",
     logoBg: "bg-indigo-950",
-    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
-    scholarshipTier: "50% Partial",
-    tuitionRange: "AU$28,000 / yr",
-    popularFields: ["Cybersecurity", "Nursing", "Biotechnology"],
-    accreditation: "Group of Eight Australia"
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+    scholarshipTier: "100% CSC Full",
+    tuitionRange: "CNY 28,000 / yr (Full Stipend)",
+    popularFields: ["BDS (Dentistry)", "Naval Engineering", "Biomedical"],
+    accreditation: "C9 League Founder / Top Medical Hospital Network"
   },
   {
-    id: "toronto",
-    name: "University of Toronto",
-    qsRank: 21,
-    country: "Canada",
-    city: "Toronto",
-    logoBg: "bg-blue-950",
-    image: "https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?auto=format&fit=crop&w=800&q=80",
-    scholarshipTier: "Merit Waiver",
-    tuitionRange: "CA$24,000 / yr",
-    popularFields: ["AI & Robotics", "Finance", "Healthcare"],
-    accreditation: "Canada Top Ranked University"
+    id: "nanjing",
+    name: "Nanjing University",
+    qsRank: 141,
+    country: "China",
+    city: "Nanjing",
+    logoBg: "bg-emerald-950",
+    image: "https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=800&q=80",
+    scholarshipTier: "Provincial Full",
+    tuitionRange: "CNY 21,000 / yr (Jiangsu Jasmine Grant)",
+    popularFields: ["Environmental Science", "Astronomy", "MBBS"],
+    accreditation: "National Double First Class University"
+  },
+  {
+    id: "wuhan",
+    name: "Wuhan University",
+    qsRank: 194,
+    country: "China",
+    city: "Wuhan",
+    logoBg: "bg-amber-900",
+    image: "https://images.unsplash.com/photo-1527838832700-54595d244535?auto=format&fit=crop&w=800&q=80",
+    scholarshipTier: "100% CSC Full",
+    tuitionRange: "CNY 20,000 / yr (Full Waiver)",
+    popularFields: ["MBBS", "Software Engineering", "Law"],
+    accreditation: "WHO / WDOMS Recognized Medical Campus"
+  },
+  {
+    id: "xjtu",
+    name: "Xi'an Jiaotong University",
+    qsRank: 295,
+    country: "China",
+    city: "Xi'an",
+    logoBg: "bg-[#003875]",
+    image: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=800&q=80",
+    scholarshipTier: "100% CSC Full",
+    tuitionRange: "CNY 19,000 / yr (Silk Road Grant)",
+    popularFields: ["Mechanical Engineering", "Energy", "MBBS"],
+    accreditation: "Ministry of Education Project 985 State Campus"
   }
 ];
 
 export const SCHOLARSHIPS: Scholarship[] = [
   {
-    id: "csc",
-    title: "Chinese Government Scholarship (CSC Type A & B)",
-    country: "China",
-    coverage: "100% Full Coverage",
+    id: "csc-type-a-b",
+    title: "Chinese Government Scholarship (CSC Type A & Type B)",
+    country: "China (All Provinces)",
+    coverage: "100% All-Inclusive Full Coverage",
     benefits: [
-      "100% Tuition Fee Waiver",
-      "Free Campus Accommodation (Single/Double Room)",
-      "Monthly Living Allowance (CNY 2,500 - 3,500 / month)",
-      "Comprehensive Medical Insurance Included"
+      "100% Tuition Fee Exemption for Full Degree Duration",
+      "Free Campus Accommodation (Single or Double En-Suite Room)",
+      "Monthly Living Stipend (CNY 2,500/mo Bachelor, CNY 3,000/mo Master, CNY 3,500/mo PhD)",
+      "Comprehensive Medical & Hospitalization Insurance Included"
     ],
     deadline: "April 30, 2026",
-    eligibility: "High school score 75%+ or Bachelor GPA 3.0+ for Masters",
+    eligibility: "High school score 75%+ or Bachelor GPA 3.0+ for Masters; Age below 25 (Bachelor) / 35 (Master)",
     badge: "100% Full"
   },
   {
-    id: "turkiye-burslari",
-    title: "Türkiye Bursları Government Full Grant",
-    country: "Turkey",
-    coverage: "100% All-Inclusive Grant",
+    id: "zhejiang-gov",
+    title: "Zhejiang Provincial Government International Scholarship",
+    country: "China (Zhejiang Province)",
+    coverage: "CNY 20,000 - 30,000 / Year Tuition Waiver",
     benefits: [
-      "Full Tuition Exemption",
-      "Free Flight Ticket (Round Trip)",
-      "Free Dormitory Accommodation",
-      "Monthly Stipend + 1-Year Turkish Language Course"
+      "Direct reduction on annual tuition fee",
+      "Priority allocation for university dormitory rooms",
+      "Opportunity to upgrade to CSC Full Scholarship upon year 1 academic distinction"
     ],
-    deadline: "February 20, 2026",
-    eligibility: "Undergraduate age below 21; Academic score 70%+ (85%+ for MBBS)",
+    deadline: "May 20, 2026",
+    eligibility: "High school completion with strong academic transcripts",
+    badge: "Provincial"
+  },
+  {
+    id: "shanghai-gov",
+    title: "Shanghai Government Scholarship (SGS Class A Full Grant)",
+    country: "China (Shanghai Megacity)",
+    coverage: "100% Full Waiver + Living Allowance",
+    benefits: [
+      "100% Tuition & Registration Fee Waiver",
+      "Free Campus Housing at Fudan / SJTU / Tongji",
+      "Monthly Living Allowance (CNY 2,500 - 3,000 / month)",
+      "Accident & Health Insurance Coverage"
+    ],
+    deadline: "March 31, 2026",
+    eligibility: "Outstanding high school or university academic records",
     badge: "Government"
   },
   {
-    id: "stipendium",
-    title: "Stipendium Hungaricum EU Scholarship",
-    country: "Hungary (Europe)",
-    coverage: "100% Full European Grant",
+    id: "jiangsu-jasmine",
+    title: "Jiangsu Jasmine Belt & Road Full Scholarship",
+    country: "China (Jiangsu Province)",
+    coverage: "100% Full Tuition + Free Dormitory",
     benefits: [
-      "Full Tuition Exemption for Bachelor & Master",
-      "Monthly Accommodation Allowance",
-      "Health Insurance for Hungary & Schengen Travel",
-      "Monthly Living Stipend"
+      "Full Tuition Exemption at Nanjing / Southeast University",
+      "Free Dormitory Room Accommodation",
+      "CNY 10,000 annual living grant for Belt & Road countries"
     ],
-    deadline: "January 15, 2026",
-    eligibility: "High school completion with strong background in chosen major",
+    deadline: "June 15, 2026",
+    eligibility: "Applicants holding passport from Belt & Road partner nations",
     badge: "100% Full"
   },
   {
-    id: "uk-merit",
-    title: "UK Vice-Chancellor International Merit Award",
-    country: "United Kingdom",
-    coverage: "£3,000 - £6,000 Fee Deduction",
+    id: "president-merit",
+    title: "University President Merit Academic Award",
+    country: "China (Selected State Campuses)",
+    coverage: "50% - 100% First Class Tuition Deduction",
     benefits: [
-      "Direct reduction on first-year tuition fee",
-      "Automatic evaluation upon early application submission",
-      "Guaranteed accommodation priority placement"
+      "Fast-track application processing within 7 days",
+      "Guaranteed English Medium Program placement",
+      "Free 1-Year HSK Chinese Language coaching included"
     ],
-    deadline: "June 30, 2026",
-    eligibility: "Offer holder with 80%+ overall academic performance",
+    deadline: "July 10, 2026",
+    eligibility: "High school score 70%+ or good recommendation letter",
     badge: "Merit"
-  },
-  {
-    id: "aus-global",
-    title: "Australian Global Excellence Award",
-    country: "Australia",
-    coverage: "Up to 50% Tuition Waiver",
-    benefits: [
-      "25% to 50% Tuition Fee discount for full course duration",
-      "Access to exclusive university mentoring program",
-      "Fast-track internship placement support"
-    ],
-    deadline: "July 15, 2026",
-    eligibility: "Outstanding academic record & English proficiency",
-    badge: "Partial"
   }
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     stepNumber: 1,
-    title: "Free Consultation",
-    subtitle: "Profile Analysis & Goal Alignment",
-    description: "Sit down with our senior education advisors (online or in-person) to review your academic transcripts, career ambitions, budget, and destination preferences.",
+    title: "Free Profile Evaluation",
+    subtitle: "China Academic Audit & Goal Alignment",
+    description: "Sit down with SBB's China admissions specialists to evaluate your FSc / High School / Bachelor marksheets, budget preferences, and target CSC scholarship quotas.",
     duration: "Day 1",
-    deliverables: ["Personalized Study Roadmap", "University shortlist (3-5 options)", "Scholarship probability report"]
+    deliverables: ["Personalized China Study Roadmap", "University shortlist (3-5 Chinese state campuses)", "CSC Scholarship probability assessment"]
   },
   {
     stepNumber: 2,
-    title: "Eligibility Check",
-    subtitle: "Transcript & Document Evaluation",
-    description: "Our compliance team audits your marksheets, passport, and recommendation letters to ensure 100% alignment with embassy and university requirements.",
+    title: "Document Verification",
+    subtitle: "Ministry & Foreign Office Attestation",
+    description: "Our compliance team audits your marksheets, police character certificate, physical examination form, and recommendation letters for 100% Chinese embassy alignment.",
     duration: "Days 2 - 3",
-    deliverables: ["Verified Document Dossier", "Equivalency Certificate guidance", "IELTS/TOEFL waiver assessment"]
+    deliverables: ["JW202 Verified Dossier", "Foreigner Physical Examination report guidance", "English Medium Certificate (IELTS Waiver)"]
   },
   {
     stepNumber: 3,
-    title: "University Selection",
-    subtitle: "Target Program Finalization",
-    description: "We select the optimal blend of target universities offering maximum scholarship potential and strong post-graduation employment rates.",
+    title: "University & CSC Selection",
+    subtitle: "Target Chinese Campus & Major Finalization",
+    description: "We select the optimal Chinese state universities offering maximum CSC government quotas, WHO accreditation, and modern en-suite dormitories.",
     duration: "Days 4 - 5",
-    deliverables: ["Finalized University applications list", "Scholarship portal strategy", "Fee breakdown transparency document"]
+    deliverables: ["Finalized Chinese University list", "CSC Agency Code strategy", "Fee transparency breakdown"]
   },
   {
     stepNumber: 4,
-    title: "Application Submission",
-    subtitle: "Direct Portal Submission",
-    description: "We submit your applications through SBB's direct official university portal access, bypassing general queues for priority fast-track processing.",
+    title: "Direct Portal Submission",
+    subtitle: "MOE Direct System Filing",
+    description: "We submit your application directly through SBB's official Chinese university portal agreements, bypassing general international queues for fast-track processing.",
     duration: "Days 6 - 10",
-    deliverables: ["Application Tracking IDs", "SOP & Recommendation letter polishing", "Direct admissions office liaison"]
+    deliverables: ["CSC Portal Application Tracking IDs", "SOP & Study Plan polishing", "Direct Dean Office liaison"]
   },
   {
     stepNumber: 5,
-    title: "Admission Letter",
-    subtitle: "Official Offer & JW202 / CAS Grant",
-    description: "Receive your official University Admission Letter along with government visa clearance documentation (JW202 / CAS / Offer Letter).",
+    title: "JW202 & Admission Approval",
+    subtitle: "Official Ministry JW202 / JW201 Visa Form Grant",
+    description: "Receive your official University Admission Notice along with the Chinese Ministry of Education Visa Application Form (JW202 or JW201).",
     duration: "Weeks 2 - 4",
-    deliverables: ["Official Admission Letter", "JW202 / CAS Visa Form", "Scholarship Confirmation Award"]
+    deliverables: ["Official Chinese Admission Notice", "JW202 / JW201 Government Visa Form", "100% Scholarship Award Certificate"]
   },
   {
     stepNumber: 6,
-    title: "Visa Processing",
-    subtitle: "Embassy File Preparation & Interview Mock",
-    description: "Our expert visa team prepares your embassy file, bank statements verification, medical checkup scheduling, and conducts 1-on-1 mock interviews.",
+    title: "Chinese Embassy Visa Filing",
+    subtitle: "X1 / X2 Student Visa Stamping",
+    description: "Our visa desk prepares your Chinese embassy file, embassy appointment booking, bank proof verification, and conducts 1-on-1 mock embassy interviews.",
     duration: "Weeks 4 - 6",
-    deliverables: ["Embassy Visa File", "1-on-1 Mock Interview session", "Guaranteed Visa Stamping support"]
+    deliverables: ["Chinese Embassy X1/X2 Visa File", "1-on-1 Mock Interview session", "Guaranteed Visa Stamping support"]
   },
   {
     stepNumber: 7,
-    title: "Fly Abroad",
-    subtitle: "Pre-Departure & Airport Pick Up",
-    description: "Fly to your destination with total confidence! We arrange pre-departure briefings, flight bookings, foreign exchange, dorm room setup, and airport pickup.",
+    title: "Fly to China & Dorm Setup",
+    subtitle: "Flight Arrival, Campus Pick-Up & Dorm Check-In",
+    description: "Fly to China with total peace of mind! SBB arranges airport pickup in Beijing, Shanghai, Hangzhou, or Guangzhou, dormitory key handover, SIM card setup, and residence permit registration.",
     duration: "Departure Day",
-    deliverables: ["Flight Ticket & Baggage guidance", "Foreign Dormitory key handover", "24/7 On-ground student support"]
+    deliverables: ["Direct Flight Ticket guidance", "Dormitory Room key handover", "24/7 On-ground Chinese student support"]
   }
 ];
 
@@ -530,7 +529,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     university: "Zhejiang University",
     country: "China",
     year: "Graduated 2024",
-    quote: "SBB handled everything from my 100% CSC Full Scholarship application to my JW202 visa. Now I am practicing medicine confidently with international accreditation!",
+    quote: "SBB handled everything from my 100% CSC Full Scholarship application to my JW202 visa. Now I am practicing medicine confidently with international WHO & ECFMG accreditation!",
     image: "https://images.unsplash.com/photo-1594824813571-24a390747414?auto=format&fit=crop&w=600&q=80",
     flag: "🇨🇳",
     roleNow: "Junior Medical Officer",
@@ -540,27 +539,27 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     id: "hassan",
     studentName: "Hassan Ali",
     program: "MSc Data Science & AI",
-    university: "University of Manchester",
-    country: "United Kingdom",
+    university: "Shanghai Jiao Tong University",
+    country: "China",
     year: "Graduated 2025",
-    quote: "The personalized guidance from SBB counsellors helped me secure a £5,000 merit scholarship and a 2-year UK Post-Study Work visa. Highly professional service!",
+    quote: "Studying Artificial Intelligence in Shanghai on a full Shanghai Government Scholarship was the best decision of my life. SBB's team secured my JW202 visa in 2 weeks!",
     image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80",
-    flag: "🇬🇧",
-    roleNow: "Data Analyst at FinTech Firm",
-    scholarshipWon: "£5,000 Merit Bursary"
+    flag: "🇨🇳",
+    roleNow: "AI Engineer at Tech Firm",
+    scholarshipWon: "Shanghai Gov Class A Full Grant"
   },
   {
     id: "fatima",
     studentName: "Fatima Omar",
     program: "BDS (Dentistry)",
-    university: "Istanbul University",
-    country: "Turkey",
+    university: "Capital Medical University",
+    country: "China",
     year: "Class of 2025",
-    quote: "Studying Dentistry in Istanbul on a full scholarship was a dream come true. SBB made the entire admission and visa process seamless for my family.",
+    quote: "Studying Dentistry in Beijing on a full scholarship was a dream come true for my family. The campus dorms, halal dining halls, and clinical labs are top-notch.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-    flag: "🇹🇷",
+    flag: "🇨🇳",
     roleNow: "Dental Resident",
-    scholarshipWon: "100% Türkiye Bursları Grant"
+    scholarshipWon: "Beijing Belt & Road Scholarship"
   }
 ];
 
@@ -568,27 +567,27 @@ export const PARENT_REVIEWS: ParentReview[] = [
   {
     id: "tariq",
     parentName: "Mr. Tariq Khan",
-    childName: "Zain Khan (MBBS Student)",
-    destination: "China",
-    review: "Sending your child abroad for medical study is a huge emotional decision. SBB provided weekly updates, verified campus dorm safety, and ensured my son was fully cared for.",
+    childName: "Zain Khan (MBBS Student @ ZJU)",
+    destination: "Hangzhou, China",
+    review: "Sending your child abroad for medical study is a huge emotional decision. SBB provided weekly updates, verified campus dorm safety, and ensured my son had halal dining right next to his room.",
     rating: 5,
     location: "Parent from Lahore"
   },
   {
     id: "rashid",
     parentName: "Dr. Rashid Mahmud",
-    childName: "Ayesha Mahmud (MSc UK)",
-    destination: "United Kingdom",
-    review: "As an academic myself, I was impressed by SBB's complete transparency. No hidden charges, zero misleading promises. They delivered exactly what they promised.",
+    childName: "Ayesha Mahmud (Software Eng @ SJTU)",
+    destination: "Shanghai, China",
+    review: "As an academic myself, I was impressed by SBB's complete transparency. No hidden agency surcharges, direct JW202 ministry tracking, and 100% scholarship delivery.",
     rating: 5,
     location: "Parent from Islamabad"
   },
   {
     id: "kamran",
     parentName: "Engr. Kamran Zubair",
-    childName: "Bilal Zubair (BEng Cyber)",
-    destination: "Malaysia",
-    review: "SBB's visa team is top notch. My son's Malaysia student visa was stamped in less than 3 weeks without any hassle.",
+    childName: "Bilal Zubair (BEng Civil @ SEU)",
+    destination: "Nanjing, China",
+    review: "SBB's Chinese visa team is top notch. My son's Chinese student X1 visa was stamped in less than 10 days without any hassle.",
     rating: 5,
     location: "Parent from Karachi"
   }
@@ -597,27 +596,27 @@ export const PARENT_REVIEWS: ParentReview[] = [
 export const FAQS = [
   {
     category: "General",
-    question: "What makes Study Beyond Borders different from other agencies?",
-    answer: "Unlike traditional agencies, SBB operates with direct official university representations, absolute fee transparency, zero hidden charges, and a 98% visa success record. We provide end-to-end mentorship from profile analysis to on-ground dormitory setup."
+    question: "Why should I study in China through Study Beyond Borders?",
+    answer: "China is home to world-renowned state universities offering WHO/ECFMG accredited medical programs, cutting-edge AI & engineering labs, and the world's largest government scholarship system (CSC). SBB holds direct official university representations, ensuring 100% fee transparency and a 99% JW202 visa approval rate."
   },
   {
     category: "Scholarships",
-    question: "Can I get a 100% full scholarship without IELTS?",
-    answer: "Yes! Several top partner universities in China, Turkey, and Malaysia offer English Proficiency Certificate waivers (EPC) based on your high school or Bachelor medium of instruction, qualifying you for 100% tuition and accommodation grants."
+    question: "What is the CSC Chinese Government Scholarship and how do I get 100% coverage?",
+    answer: "The CSC (Chinese Scholarship Council) grant provides 100% tuition exemption, free single/double campus en-suite accommodation, monthly living allowance (CNY 2,500 - 3,500/mo), and full health insurance. SBB evaluates your marksheets to submit your application directly under official University Type B quotas."
   },
   {
     category: "Medical (MBBS/BDS)",
-    question: "Are your medical programs recognized by global medical councils?",
-    answer: "Absolutely. All our partner medical universities in China, Turkey, and Europe are listed on the World Directory of Medical Schools (WDOMS) and approved by WHO, ECFMG (USA), GMC (UK), AMC (Australia), and national medical councils."
+    question: "Are Chinese MBBS medical degrees recognized by WHO, ECFMG, GMC UK, and national medical councils?",
+    answer: "Yes! All SBB partner medical universities (Zhejiang, Capital Medical, Wuhan, Nanjing Medical) are listed in the World Directory of Medical Schools (WDOMS) and approved by WHO, ECFMG (USA), GMC (UK), AMC (Australia), and national medical councils for global licensing exams."
   },
   {
     category: "Visa & Process",
-    question: "What is your visa approval success rate?",
-    answer: "We maintain a 98% visa success rate. Our dedicated embassy compliance team conducts comprehensive document verification, financial proof structuring, and 1-on-1 mock embassy interviews before submission."
+    question: "What is a JW202 / JW201 form and how long does Chinese visa processing take?",
+    answer: "The JW202 (or JW201) is the official student visa authorization form issued directly by the Chinese Ministry of Education and Ministry of Foreign Affairs. Once issued, embassy X1 student visa stamping takes just 5-10 business days."
   },
   {
     category: "Finances",
-    question: "Are there any hidden costs after arriving at the university?",
-    answer: "None. SBB provides a complete, itemized financial statement prior to application, outlining exact tuition, campus dormitory fees, medical insurance, physical exam costs, and living expense estimates."
+    question: "Are halal food and safe dormitories available for international students in China?",
+    answer: "Yes! All major Chinese state university campuses feature dedicated Muslim Halal Canteens certified by local Islamic associations, 24/7 campus security, en-suite air-conditioned dormitory rooms, and high-speed Wi-Fi."
   }
 ];

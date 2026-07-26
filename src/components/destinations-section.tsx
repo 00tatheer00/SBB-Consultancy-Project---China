@@ -23,7 +23,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
   const [selectedRegion, setSelectedRegion] = useState<string>("All");
   const [activeModalDestination, setActiveModalDestination] = useState<Destination | null>(null);
 
-  const regions = ["All", "Asia", "Europe", "Oceania", "Americas"];
+  const regions = ["All", "East China", "North China", "Central China", "South China", "Northwest China"];
 
   const filteredDestinations =
     selectedRegion === "All"
@@ -37,13 +37,13 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-slate-200">
           <div className="space-y-3 max-w-2xl">
             <Badge variant="primary">
-              <Globe className="w-3.5 h-3.5" /> Premier Study Destinations
+              <Globe className="w-3.5 h-3.5" /> Premier Study Hubs in China 🇨🇳
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Explore World-Class <span className="text-[#1E90FF]">Education Hubs</span>
+              Explore Top Academic <span className="text-[#1E90FF]">Cities in China 🇨🇳</span>
             </h2>
             <p className="text-slate-600 text-base font-normal">
-              Choose from top accredited universities across 7 primary global regions offering recognized degrees, tuition waivers, and post-graduation work opportunities.
+              Choose from premier university cities across China offering English-medium MBBS, engineering, and tech degrees with 100% CSC Government & Provincial Scholarships.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
                 onClick={() => setSelectedRegion(region)}
                 className={`px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full transition-all ${
                   selectedRegion === region
-                    ? "bg-[#1E90FF] text-white shadow-xs"
+                    ? "bg-[#1E90FF] text-white shadow-xs font-bold"
                     : "bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200/60"
                 }`}
               >
@@ -74,7 +74,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
             >
               <div>
                 {/* Header Image Frame */}
-                <div className="relative h-52 w-full overflow-hidden">
+                <div className="relative h-56 w-full overflow-hidden">
                   <img
                     src={dest.image}
                     alt={`Study in ${dest.name}`}
@@ -84,15 +84,17 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
 
                   {/* Top Flag & Visa Badge */}
                   <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
-                    <span className="text-3xl filter drop-shadow">{dest.flag}</span>
+                    <span className="text-3xl filter drop-shadow">🇨🇳</span>
                     <Badge variant="primary" className="text-xs px-2.5 py-0.5 font-semibold bg-white/95 text-slate-900 border-none">
-                      {dest.visaSuccessRate} Visa Success
+                      {dest.visaSuccessRate} JW202 Success
                     </Badge>
                   </div>
 
                   {/* Name Tag */}
                   <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white">
-                    <h3 className="text-2xl font-bold">{dest.name}</h3>
+                    <h3 className="text-2xl font-bold flex items-center gap-2">
+                      {dest.name} <span className="text-xl">🇨🇳</span>
+                    </h3>
                     <p className="text-xs text-slate-300 font-medium line-clamp-1">{dest.tagline}</p>
                   </div>
                 </div>
@@ -154,7 +156,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
                   onClick={() => setActiveModalDestination(dest)}
                   className="flex-1 text-xs"
                 >
-                  Quick View
+                  City Guide
                 </Button>
                 <Button
                   variant="primary"
@@ -176,7 +178,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
         <Modal
           isOpen={!!activeModalDestination}
           onClose={() => setActiveModalDestination(null)}
-          title={`Study in ${activeModalDestination.name} ${activeModalDestination.flag}`}
+          title={`Study in ${activeModalDestination.name} 🇨🇳`}
         >
           <div className="space-y-6">
             <div className="relative h-48 rounded-2xl overflow-hidden border border-slate-200">
@@ -187,35 +189,37 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
               <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="text-xl font-bold">{activeModalDestination.name} Academic Guide</h4>
+                <h4 className="text-xl font-bold flex items-center gap-2">
+                  {activeModalDestination.name} Academic Guide 🇨🇳
+                </h4>
                 <p className="text-xs text-slate-300">{activeModalDestination.tagline}</p>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                <p className="text-xs text-slate-500 font-semibold">Average Tuition</p>
+                <p className="text-xs text-slate-500 font-semibold">Average Tuition in China</p>
                 <p className="text-sm font-bold text-slate-900">{activeModalDestination.avgTuition}</p>
               </div>
               <div className="p-4 bg-[#EAF4FF] rounded-xl border border-[#1E90FF]/20">
-                <p className="text-xs text-[#1E90FF] font-semibold">Visa Success Rate</p>
+                <p className="text-xs text-[#1E90FF] font-semibold">JW202 Visa Success Rate</p>
                 <p className="text-sm font-bold text-slate-900">{activeModalDestination.visaSuccessRate}</p>
               </div>
             </div>
 
             <div>
-              <p className="text-sm font-bold text-slate-900 mb-2">Popular University Cities</p>
+              <p className="text-sm font-bold text-slate-900 mb-2">Featured State Universities</p>
               <div className="flex flex-wrap gap-2">
                 {activeModalDestination.popularCities.map((city, i) => (
-                  <span key={i} className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">
-                    {city}
+                  <span key={i} className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full flex items-center gap-1">
+                    🇨🇳 {city}
                   </span>
                 ))}
               </div>
             </div>
 
             <div>
-              <p className="text-sm font-bold text-slate-900 mb-2">Scholarships & Financial Aid</p>
+              <p className="text-sm font-bold text-slate-900 mb-2">CSC & Provincial Scholarship Coverage</p>
               <p className="text-xs text-emerald-800 bg-emerald-50 p-3 rounded-xl border border-emerald-200 font-medium">
                 {activeModalDestination.scholarshipsAvailable}
               </p>
@@ -223,7 +227,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
 
             <div className="flex gap-4 pt-4 border-t border-slate-200">
               <Button variant="outline" className="w-1/2" onClick={() => setActiveModalDestination(null)}>
-                Close Preview
+                Close Guide
               </Button>
               <Button
                 variant="primary"
@@ -233,7 +237,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
                   onOpenBooking();
                 }}
               >
-                Start Application
+                Apply to {activeModalDestination.name.split(" ")[0]}
               </Button>
             </div>
           </div>
