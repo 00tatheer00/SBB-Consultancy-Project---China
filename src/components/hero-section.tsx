@@ -94,14 +94,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.4, delay: 0.3 }}
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-1"
             >
-              {/* Apply Now Primary Button */}
+              {/* Apply Now Primary Button (Updated to strict "Apply Now") */}
               <Button
                 variant="primary"
                 size="lg"
                 onClick={onOpenBooking}
                 className="w-full sm:w-auto text-sm px-8 py-3.5 font-bold shadow-md shadow-[#1E90FF]/25 flex items-center justify-center gap-3"
               >
-                <span>Apply to China Now</span>
+                <span>Apply Now</span>
                 <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
                   <ArrowRight className="w-3.5 h-3.5 text-white" />
                 </span>

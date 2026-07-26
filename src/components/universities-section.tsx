@@ -12,20 +12,21 @@ import { UNIVERSITIES, University } from "@/data/mock-data";
 import { GlassCard } from "./ui/glass-card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { ChinaFlag } from "./ui/china-flag";
 
 interface UniversitiesSectionProps {
   onOpenBooking: () => void;
 }
 
 export const UniversitiesSection: React.FC<UniversitiesSectionProps> = ({ onOpenBooking }) => {
-  const [filterCountry, setFilterCountry] = useState<string>("All");
+  const [filterCity, setFilterCity] = useState<string>("All");
 
-  const countries = ["All", "China", "United Kingdom", "Turkey", "Malaysia", "Germany", "Australia", "Canada"];
+  const chinaCities = ["All", "Beijing", "Shanghai", "Hangzhou", "Nanjing", "Wuhan", "Xi'an"];
 
   const filteredUnis =
-    filterCountry === "All"
+    filterCity === "All"
       ? UNIVERSITIES
-      : UNIVERSITIES.filter((u) => u.country === filterCountry);
+      : UNIVERSITIES.filter((u) => u.city === filterCity);
 
   return (
     <section id="universities" className="py-20 sm:py-28 bg-white border-b border-slate-200/80 relative">
@@ -34,29 +35,31 @@ export const UniversitiesSection: React.FC<UniversitiesSectionProps> = ({ onOpen
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-slate-200">
           <div className="space-y-3 max-w-2xl">
             <Badge variant="primary">
-              <Building2 className="w-3.5 h-3.5" /> Official Campus Representations
+              <Building2 className="w-3.5 h-3.5" /> Official Chinese Campus Representations
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Top Ranked <span className="text-[#1E90FF]">Partner Universities</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center flex-wrap gap-2">
+              <span>Top Ranked</span>
+              <span className="text-[#1E90FF]">Chinese Partner Universities</span>
+              <ChinaFlag size="lg" />
             </h2>
             <p className="text-slate-600 text-base font-normal">
-              Direct agreements with world-leading state universities across Asia, Europe, and the West featuring accelerated admission verification and dedicated scholarship quotas.
+              Direct official admissions agreements with China's leading state universities featuring accelerated JW202 visa processing and dedicated 100% CSC scholarship quotas.
             </p>
           </div>
 
-          {/* Country Selector */}
+          {/* City Filter Selector */}
           <div className="flex flex-wrap gap-2">
-            {countries.map((c) => (
+            {chinaCities.map((city) => (
               <button
-                key={c}
-                onClick={() => setFilterCountry(c)}
-                className={`px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all ${
-                  filterCountry === c
+                key={city}
+                onClick={() => setFilterCity(city)}
+                className={`px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all cursor-pointer ${
+                  filterCity === city
                     ? "bg-[#1E90FF] text-white shadow-xs font-bold"
                     : "bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200/60"
                 }`}
               >
-                {c}
+                {city === "All" ? "All China Cities" : `🇨🇳 ${city}`}
               </button>
             ))}
           </div>
@@ -94,8 +97,8 @@ export const UniversitiesSection: React.FC<UniversitiesSectionProps> = ({ onOpen
 
                   {/* Location Overlay */}
                   <div className="absolute bottom-3 left-3 right-3 text-white">
-                    <p className="text-xs font-medium text-slate-300 flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-[#1E90FF]" /> {uni.city}, {uni.country}
+                    <p className="text-xs font-medium text-slate-300 flex items-center gap-1.5">
+                      <ChinaFlag size="sm" /> {uni.city}, {uni.country}
                     </p>
                   </div>
                 </div>
@@ -108,7 +111,7 @@ export const UniversitiesSection: React.FC<UniversitiesSectionProps> = ({ onOpen
 
                   <div className="bg-slate-50 p-2.5 rounded-lg text-xs space-y-1 border border-slate-100">
                     <div className="flex justify-between">
-                      <span className="text-slate-500 font-medium">Est. Tuition:</span>
+                      <span className="text-slate-500 font-medium">CSC / Fee Est:</span>
                       <span className="font-bold text-slate-900">{uni.tuitionRange}</span>
                     </div>
                     <div className="flex justify-between text-[11px] text-slate-500 pt-1 border-t border-slate-200/60">
