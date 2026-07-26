@@ -18,6 +18,8 @@ import { PROCESS_STEPS } from "@/data/mock-data";
 import { GlassCard } from "./ui/glass-card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { ChinaFlag } from "./ui/china-flag";
+import { VisaTrackerWidget } from "./visa-tracker";
 
 interface ProcessSectionProps {
   onOpenBooking: () => void;
@@ -55,13 +57,15 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <Badge variant="primary" className="mx-auto">
-            <Sparkles className="w-3.5 h-3.5" /> Seamless Admission Blueprint
+            <Sparkles className="w-3.5 h-3.5" /> Seamless Admission Blueprint 🇨🇳
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Your 7-Step Pathway From <span className="text-[#1E90FF]">Consultation to Campus</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center justify-center gap-2">
+            <span>7-Step Pathway From</span>
+            <span className="text-[#1E90FF]">Consultation to Campus</span>
+            <ChinaFlag size="lg" />
           </h2>
           <p className="text-slate-600 text-base sm:text-lg font-normal">
-            Our systematic 7-stage roadmap guarantees maximum application accuracy, fast JW202/CAS clearance, and 98% embassy visa success.
+            Our systematic 7-stage roadmap guarantees maximum application accuracy, fast JW202 visa clearance, and 99% Chinese embassy visa success.
           </p>
         </div>
 
@@ -90,7 +94,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
                   <div
                     className={`w-11 h-11 rounded-2xl flex items-center justify-center font-bold text-sm transition-all ${
                       isActive
-                        ? "bg-[#1E90FF] text-white shadow-md scale-105 ring-4 ring-[#EAF4FF]"
+                        ? "bg-[#1E90FF] text-white shadow-md scale-108 ring-4 ring-[#EAF4FF]"
                         : isPassed
                         ? "bg-slate-900 text-white"
                         : "bg-white text-slate-500 border border-slate-300 group-hover:border-[#1E90FF]"
@@ -160,7 +164,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
                   variant="primary"
                   size="sm"
                   onClick={onOpenBooking}
-                  className="w-full text-xs"
+                  className="w-full text-xs font-bold"
                   icon={<ArrowRight className="w-3.5 h-3.5" />}
                 >
                   Start This Step
@@ -169,6 +173,9 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
             </div>
           </GlassCard>
         </div>
+
+        {/* Live JW202 Visa Status Tracker Widget */}
+        <VisaTrackerWidget />
       </div>
     </section>
   );
