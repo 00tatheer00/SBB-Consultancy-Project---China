@@ -5,12 +5,15 @@ import { motion } from "framer-motion";
 import {
   Stethoscope,
   Smile,
-  Terminal,
-  Cpu,
   Pill,
   HeartPulse,
+  Cpu,
+  Terminal,
   TrendingUp,
+  Sparkles,
   ArrowRight,
+  Clock,
+  Briefcase,
   CheckCircle2
 } from "lucide-react";
 import { PROGRAMS, Program } from "@/data/mock-data";
@@ -18,41 +21,40 @@ import { GlassCard } from "./ui/glass-card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Modal } from "./ui/modal";
-import { ChinaFlag } from "./ui/china-flag";
 
 interface ProgramsSectionProps {
   onOpenBooking: () => void;
 }
 
 export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onOpenBooking }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [activeModalProgram, setActiveModalProgram] = useState<Program | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [selectedProgram, setSelectedProgram] = useState<Program | null>(null);
 
-  const categories = ["All", "Medical", "Technology", "Engineering", "Business"];
+  const categories = ["All", "Medical", "Engineering", "Technology", "Business"];
 
   const filteredPrograms =
-    selectedCategory === "All"
+    activeCategory === "All"
       ? PROGRAMS
-      : PROGRAMS.filter((p) => p.category === selectedCategory);
+      : PROGRAMS.filter((p) => p.category === activeCategory);
 
-  const getProgramIcon = (iconName: string) => {
+  const getIcon = (iconName: string) => {
     switch (iconName) {
       case "Stethoscope":
-        return <Stethoscope className="w-5 h-5 text-[#DC2626]" />;
+        return <Stethoscope className="w-5 h-5 text-[#1E90FF]" />;
       case "Smile":
-        return <Smile className="w-5 h-5 text-[#DC2626]" />;
-      case "Terminal":
-        return <Terminal className="w-5 h-5 text-[#DC2626]" />;
-      case "Cpu":
-        return <Cpu className="w-5 h-5 text-[#DC2626]" />;
+        return <Smile className="w-5 h-5 text-[#1E90FF]" />;
       case "Pill":
-        return <Pill className="w-5 h-5 text-[#DC2626]" />;
+        return <Pill className="w-5 h-5 text-[#1E90FF]" />;
       case "HeartPulse":
-        return <HeartPulse className="w-5 h-5 text-[#DC2626]" />;
+        return <HeartPulse className="w-5 h-5 text-[#1E90FF]" />;
+      case "Cpu":
+        return <Cpu className="w-5 h-5 text-[#1E90FF]" />;
+      case "Terminal":
+        return <Terminal className="w-5 h-5 text-[#1E90FF]" />;
       case "TrendingUp":
-        return <TrendingUp className="w-5 h-5 text-[#DC2626]" />;
+        return <TrendingUp className="w-5 h-5 text-[#1E90FF]" />;
       default:
-        return <Stethoscope className="w-5 h-5 text-[#DC2626]" />;
+        return <Stethoscope className="w-5 h-5 text-[#1E90FF]" />;
     }
   };
 
@@ -60,76 +62,89 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onOpenBooking 
     <section id="programs" className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-slate-200">
-          <div className="space-y-3 max-w-2xl">
-            <Badge variant="primary">
-              <ChinaFlag size="sm" /> Taught 100% in English
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center flex-wrap gap-2">
-              <span>Accredited China</span>
-              <span className="text-[#DC2626]">Degree Programs</span>
-            </h2>
-            <p className="text-slate-600 text-base font-normal">
-              Globally recognized medical (MBBS, BDS), artificial intelligence, and infrastructure engineering degrees offered at top Chinese state campuses.
-            </p>
-          </div>
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <Badge variant="primary" className="mx-auto">
+            <Sparkles className="w-3.5 h-3.5" /> High Demand Fields
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Globally Accredited Academic <span className="text-[#1E90FF]">Degree Programs</span>
+          </h2>
+          <p className="text-slate-600 text-base sm:text-lg font-normal">
+            Choose from career-focused Bachelor, Master, and Doctorate qualifications taught entirely in English with WHO, ECFMG, and international accreditation.
+          </p>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap gap-2">
+          {/* Category Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 pt-4">
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full transition-all cursor-pointer ${
-                  selectedCategory === cat
-                    ? "bg-[#DC2626] text-white shadow-xs font-bold"
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-1.5 text-xs sm:text-sm font-semibold rounded-full transition-all ${
+                  activeCategory === cat
+                    ? "bg-[#1E90FF] text-white shadow-xs font-bold"
                     : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
                 }`}
               >
-                {cat}
+                {cat} Programs
               </button>
             ))}
           </div>
         </div>
 
-        {/* Programs Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Program Cards Grid */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPrograms.map((prog) => (
             <GlassCard
               key={prog.id}
-              className="p-6 border border-slate-200 bg-white flex flex-col justify-between hover:border-[#DC2626]/40 shadow-sm"
+              className="p-6 border border-slate-200 bg-white flex flex-col justify-between group hover:border-[#1E90FF]/40"
             >
               <div className="space-y-4">
-                {/* Category & Icon */}
+                {/* Header Icon & Category Badge */}
                 <div className="flex items-center justify-between">
-                  <div className="p-2.5 rounded-xl bg-[#FEF2F2] border border-[#DC2626]/20">
-                    {getProgramIcon(prog.iconName)}
+                  <div className="w-10 h-10 rounded-xl bg-[#EAF4FF] border border-[#1E90FF]/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    {getIcon(prog.iconName)}
                   </div>
-                  <Badge variant="accent" className="text-xs font-bold">
-                    {prog.duration}
+                  <Badge variant="secondary" className="text-[11px] font-semibold">
+                    {prog.category}
                   </Badge>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 leading-snug">
-                  {prog.title}
-                </h3>
+                {/* Title */}
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 leading-snug group-hover:text-[#1E90FF] transition-colors">
+                    {prog.title}
+                  </h3>
+                  <div className="flex items-center gap-2 text-xs text-slate-500 font-semibold mt-1">
+                    <Clock className="w-3.5 h-3.5 text-[#1E90FF]" />
+                    <span>Duration: {prog.duration}</span>
+                  </div>
+                </div>
 
-                <p className="text-xs text-slate-600 font-normal leading-relaxed line-clamp-3">
+                <p className="text-xs sm:text-sm text-slate-600 font-normal line-clamp-3 leading-relaxed">
                   {prog.description}
                 </p>
 
-                {/* Top Chinese Universities Offering This */}
-                <div className="pt-2">
-                  <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">
-                    Offered At Chinese State Campuses:
+                {/* Career Pathways */}
+                <div className="pt-2 border-t border-slate-100">
+                  <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-1">
+                    <Briefcase className="w-3 h-3 text-[#1E90FF]" /> Career Pathways:
                   </p>
                   <div className="flex flex-wrap gap-1">
-                    {prog.topCountries.map((uniName, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-slate-100 text-slate-700 text-[10px] font-medium rounded flex items-center gap-1">
-                        <ChinaFlag size="sm" /> {uniName}
+                    {prog.careerPathways.slice(0, 3).map((path, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[11px] font-medium"
+                      >
+                        {path}
                       </span>
                     ))}
                   </div>
+                </div>
+
+                {/* Top Study Hubs */}
+                <div className="flex items-center justify-between text-xs pt-1 text-slate-500 font-medium">
+                  <span>Top Destinations:</span>
+                  <span className="font-bold text-slate-800">{prog.topCountries.join(", ")}</span>
                 </div>
               </div>
 
@@ -138,19 +153,19 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onOpenBooking 
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => setActiveModalProgram(prog)}
-                  className="flex-1 text-xs"
+                  onClick={() => setSelectedProgram(prog)}
+                  className="w-1/2 text-xs"
                 >
-                  View Pathway
+                  Syllabus Guide
                 </Button>
                 <Button
                   variant="primary"
                   size="sm"
                   onClick={onOpenBooking}
-                  className="flex-1 text-xs"
+                  className="w-1/2 text-xs"
                   icon={<ArrowRight className="w-3.5 h-3.5" />}
                 >
-                  Apply Now
+                  Apply
                 </Button>
               </div>
             </GlassCard>
@@ -159,60 +174,60 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onOpenBooking 
       </div>
 
       {/* Program Details Modal */}
-      {activeModalProgram && (
+      {selectedProgram && (
         <Modal
-          isOpen={!!activeModalProgram}
-          onClose={() => setActiveModalProgram(null)}
-          title={activeModalProgram.title}
+          isOpen={!!selectedProgram}
+          onClose={() => setSelectedProgram(null)}
+          title={selectedProgram.title}
         >
           <div className="space-y-6">
-            <div className="p-4 bg-[#FEF2F2] rounded-2xl border border-[#DC2626]/20 flex items-center justify-between">
-              <div>
-                <p className="text-xs font-bold text-[#DC2626]">Category: {activeModalProgram.category}</p>
-                <p className="text-sm font-extrabold text-slate-900">Duration: {activeModalProgram.duration}</p>
+            <div className="p-4 bg-[#EAF4FF] border border-[#1E90FF]/20 rounded-2xl flex items-center gap-4">
+              <div className="p-3 bg-white rounded-xl shadow-xs">
+                {getIcon(selectedProgram.iconName)}
               </div>
-              <p className="text-xs font-bold text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200">
-                Starting Salary: {activeModalProgram.startingSalary}
-              </p>
+              <div>
+                <Badge variant="primary">{selectedProgram.category}</Badge>
+                <p className="text-xs text-slate-700 font-semibold mt-1">Duration: {selectedProgram.duration}</p>
+              </div>
             </div>
 
             <div>
-              <p className="text-sm font-bold text-slate-900 mb-1">Academic Overview</p>
-              <p className="text-xs text-slate-600 font-normal leading-relaxed">{activeModalProgram.description}</p>
+              <h4 className="text-sm font-bold text-slate-900 mb-1">Program Overview</h4>
+              <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">{selectedProgram.description}</p>
+            </div>
+
+            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1">
+              <p className="text-xs font-bold text-slate-900">Academic Prerequisites</p>
+              <p className="text-xs text-slate-600 font-medium">{selectedProgram.prerequisites}</p>
             </div>
 
             <div>
-              <p className="text-sm font-bold text-slate-900 mb-2">Global Licensing & Career Pathways</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {activeModalProgram.careerPathways.map((path, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs font-medium text-slate-700 p-2 bg-slate-50 rounded-lg border border-slate-100">
-                    <CheckCircle2 className="w-4 h-4 text-[#DC2626]" />
-                    <span>{path}</span>
-                  </div>
+              <p className="text-sm font-bold text-slate-900 mb-2">Global Career Pathways & Salary Benchmark</p>
+              <div className="flex flex-wrap gap-2 mb-2">
+                {selectedProgram.careerPathways.map((path, i) => (
+                  <span key={i} className="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-full flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#1E90FF]" /> {path}
+                  </span>
                 ))}
               </div>
-            </div>
-
-            <div>
-              <p className="text-sm font-bold text-slate-900 mb-1">Entry Prerequisites</p>
-              <p className="text-xs font-semibold text-[#DC2626] bg-red-50/50 p-3 rounded-xl border border-red-100">
-                {activeModalProgram.prerequisites}
+              <p className="text-xs font-semibold text-emerald-800 bg-emerald-50 p-2.5 rounded-lg border border-emerald-200">
+                Average Entry Level Salary Range: {selectedProgram.startingSalary}
               </p>
             </div>
 
             <div className="flex gap-4 pt-4 border-t border-slate-200">
-              <Button variant="outline" className="w-1/2" onClick={() => setActiveModalProgram(null)}>
+              <Button variant="outline" className="w-1/2" onClick={() => setSelectedProgram(null)}>
                 Close
               </Button>
               <Button
                 variant="primary"
                 className="w-1/2"
                 onClick={() => {
-                  setActiveModalProgram(null);
+                  setSelectedProgram(null);
                   onOpenBooking();
                 }}
               >
-                Apply For Seat
+                Apply for {selectedProgram.category}
               </Button>
             </div>
           </div>

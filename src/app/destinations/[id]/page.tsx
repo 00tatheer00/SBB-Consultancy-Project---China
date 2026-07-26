@@ -2,6 +2,7 @@
 
 import React, { useState, use } from "react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BookingModal } from "@/components/booking-modal";
@@ -9,8 +10,7 @@ import { DESTINATIONS } from "@/data/mock-data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
-import { ArrowLeft, CheckCircle2, Sparkles, Building2, ArrowRight } from "lucide-react";
-import { ChinaFlag } from "@/components/ui/china-flag";
+import { ArrowLeft, CheckCircle2, DollarSign, Sparkles, Building2, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function DestinationDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -22,7 +22,7 @@ export default function DestinationDetailPage({ params }: { params: Promise<{ id
     return (
       <main className="min-h-screen pt-40 text-center">
         <h1 className="text-3xl font-bold">China City Hub Not Found</h1>
-        <Link href="/destinations" className="text-[#DC2626] underline mt-4 inline-block">Return to Cities Directory</Link>
+        <Link href="/destinations" className="text-[#1E90FF] underline mt-4 inline-block">Return to Cities Directory</Link>
       </main>
     );
   }
@@ -33,7 +33,7 @@ export default function DestinationDetailPage({ params }: { params: Promise<{ id
       
       <div className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/destinations" className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#DC2626] mb-6">
+          <Link href="/destinations" className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#1E90FF] mb-6">
             <ArrowLeft className="w-4 h-4" /> Back to China Cities Directory
           </Link>
 
@@ -44,10 +44,10 @@ export default function DestinationDetailPage({ params }: { params: Promise<{ id
             <div className="absolute bottom-8 left-8 right-8 text-white flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div className="space-y-2">
                 <Badge variant="accent" className="text-xs px-3 py-1 font-bold">
-                  <ChinaFlag size="sm" /> {destination.region} Hub
+                  🇨🇳 {destination.region} Hub
                 </Badge>
                 <h1 className="text-3xl sm:text-5xl font-extrabold flex items-center gap-3">
-                  <span>Study in {destination.name}</span> <ChinaFlag size="lg" />
+                  Study in {destination.name} 🇨🇳
                 </h1>
                 <p className="text-sm sm:text-base text-slate-300 max-w-2xl font-normal">{destination.tagline}</p>
               </div>
@@ -56,7 +56,7 @@ export default function DestinationDetailPage({ params }: { params: Promise<{ id
                 variant="primary"
                 size="lg"
                 onClick={() => setBookingOpen(true)}
-                className="text-xs font-bold px-8 shadow-lg shrink-0 bg-[#DC2626]"
+                className="text-xs font-bold px-8 shadow-lg shrink-0"
                 icon={<ArrowRight className="w-4 h-4" />}
               >
                 Apply to {destination.name.split(" ")[0]} Now
@@ -70,12 +70,12 @@ export default function DestinationDetailPage({ params }: { params: Promise<{ id
               {/* Highlights Card */}
               <GlassCard className="p-8 border border-slate-200 bg-white">
                 <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-[#DC2626]" /> Why Study in {destination.name}?
+                  <Sparkles className="w-5 h-5 text-[#1E90FF]" /> Why Study in {destination.name}?
                 </h3>
                 <div className="space-y-3">
                   {destination.highlights.map((h, i) => (
                     <div key={i} className="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                      <CheckCircle2 className="w-5 h-5 text-[#DC2626] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-[#1E90FF] shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </div>
                   ))}
@@ -85,12 +85,12 @@ export default function DestinationDetailPage({ params }: { params: Promise<{ id
               {/* State Universities */}
               <GlassCard className="p-8 border border-slate-200 bg-[#FAFCFF]">
                 <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <Building2 className="w-5 h-5 text-[#DC2626]" /> State Universities in {destination.name}
+                  <Building2 className="w-5 h-5 text-[#1E90FF]" /> State Universities in {destination.name}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {destination.popularCities.map((uni, i) => (
                     <div key={i} className="p-4 bg-white rounded-xl border border-slate-200 text-xs font-bold text-slate-900 flex items-center gap-2">
-                      <ChinaFlag size="sm" /> {uni}
+                      <span>🇨🇳</span> {uni}
                     </div>
                   ))}
                 </div>
@@ -109,7 +109,7 @@ export default function DestinationDetailPage({ params }: { params: Promise<{ id
                   </div>
                   <div>
                     <span className="text-slate-500 font-medium block">CSC & Provincial Grant:</span>
-                    <span className="font-bold text-[#DC2626]">{destination.scholarshipsAvailable}</span>
+                    <span className="font-bold text-[#1E90FF]">{destination.scholarshipsAvailable}</span>
                   </div>
                   <div className="pt-2 border-t border-slate-100">
                     <span className="text-slate-500 font-medium block">JW202 Visa Success Ratio:</span>
@@ -117,7 +117,7 @@ export default function DestinationDetailPage({ params }: { params: Promise<{ id
                   </div>
                 </div>
 
-                <Button variant="primary" size="md" onClick={() => setBookingOpen(true)} className="w-full text-xs font-bold bg-[#DC2626]">
+                <Button variant="primary" size="md" onClick={() => setBookingOpen(true)} className="w-full text-xs font-bold">
                   Lock In 100% Scholarship Rate
                 </Button>
               </GlassCard>

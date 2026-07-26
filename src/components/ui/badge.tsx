@@ -1,10 +1,16 @@
 "use client";
 
 import React from "react";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "accent" | "success";
+  variant?: "primary" | "secondary" | "accent" | "outline" | "success";
   className?: string;
 }
 
@@ -13,22 +19,27 @@ export const Badge: React.FC<BadgeProps> = ({
   variant = "primary",
   className = "",
 }) => {
-  const baseStyles =
-    "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide transition-all";
-
   const variants = {
     primary:
-      "bg-[#FEF2F2] text-[#DC2626] border border-[#DC2626]/20 shadow-2xs",
+      "bg-[#EAF4FF] text-[#1E90FF] border border-[#1E90FF]/30 hover:border-[#1E90FF]/60 hover:bg-[#D8EAFF]",
     secondary:
-      "bg-slate-100 text-slate-700 border border-slate-200/80",
+      "bg-slate-100 text-slate-700 border border-slate-200/80 hover:bg-slate-200",
     accent:
-      "bg-amber-500/10 text-amber-600 border border-amber-500/20",
+      "bg-amber-50 text-amber-700 border border-amber-200/80 hover:bg-amber-100",
+    outline:
+      "bg-white/80 backdrop-blur-md text-slate-700 border border-slate-300 hover:border-[#1E90FF] hover:text-[#1E90FF]",
     success:
-      "bg-emerald-500/10 text-emerald-600 border border-emerald-500/20",
+      "bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100",
   };
 
   return (
-    <span className={`${baseStyles} ${variants[variant]} ${className}`}>
+    <span
+      className={cn(
+        "inline-flex items-center gap-1.5 px-3 py-1 text-xs font-extrabold rounded-full transition-all duration-200 hover:scale-105 select-none",
+        variants[variant],
+        className
+      )}
+    >
       {children}
     </span>
   );

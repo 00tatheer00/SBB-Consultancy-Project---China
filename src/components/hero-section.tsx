@@ -55,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FEF2F2] border border-[#DC2626]/30 text-[#DC2626] text-xs sm:text-sm font-semibold shadow-xs"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF4FF] border border-[#1E90FF]/30 text-[#1E90FF] text-xs sm:text-sm font-semibold shadow-xs"
             >
               <ChinaFlag size="sm" />
               <span>Official China University Admissions Portal</span>
@@ -72,7 +72,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 <span>Study in China</span>
                 <ChinaFlag size="lg" className="shadow-md" />
               </h1>
-              <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#DC2626] leading-[1.12]">
+              <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1E90FF] leading-[1.12]">
                 Build Your Global Future
               </p>
             </motion.div>
@@ -104,7 +104,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                     <ArrowRight className="w-3.5 h-3.5 text-white" />
                   </span>
                 }
-                className="w-full sm:w-auto text-sm sm:text-base px-8 py-3.5 font-bold shadow-md shadow-[#DC2626]/25 whitespace-nowrap"
+                className="w-full sm:w-auto text-sm sm:text-base px-8 py-3.5 font-bold shadow-md shadow-[#1E90FF]/25 whitespace-nowrap"
               >
                 Apply Now
               </Button>
@@ -112,9 +112,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               {/* Book Free Consultation White Glass Button */}
               <button
                 onClick={onOpenBooking}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm sm:text-base font-semibold rounded-full bg-white/90 backdrop-blur-md text-slate-800 border border-slate-200 shadow-sm hover:border-[#DC2626] hover:text-[#DC2626] transition-all cursor-pointer whitespace-nowrap"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm sm:text-base font-semibold rounded-full bg-white/90 backdrop-blur-md text-slate-800 border border-slate-200 shadow-sm hover:border-[#1E90FF] hover:text-[#1E90FF] transition-all cursor-pointer whitespace-nowrap"
               >
-                <Calendar className="w-4 h-4 text-[#DC2626]" />
+                <Calendar className="w-4 h-4 text-[#1E90FF]" />
                 <span>Book Free Consultation</span>
               </button>
             </motion.div>
@@ -172,7 +172,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y lg:divide-y-0 lg:divide-x divide-slate-100">
             {/* Stat 1 */}
             <div className="flex items-center gap-4 pl-0 lg:pl-2 pt-2 lg:pt-0">
-              <div className="w-12 h-12 rounded-full bg-[#DC2626] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#DC2626]/30">
+              <div className="w-12 h-12 rounded-full bg-[#1E90FF] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1E90FF]/30">
                 <Users className="w-6 h-6" />
               </div>
               <div className="text-left">
@@ -185,7 +185,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
             {/* Stat 2 */}
             <div className="flex items-center gap-4 pl-0 lg:pl-6 pt-2 lg:pt-0">
-              <div className="w-12 h-12 rounded-full bg-[#DC2626] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#DC2626]/30">
+              <div className="w-12 h-12 rounded-full bg-[#1E90FF] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1E90FF]/30">
                 <Building2 className="w-6 h-6" />
               </div>
               <div className="text-left">
@@ -198,7 +198,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
             {/* Stat 3 */}
             <div className="flex items-center gap-4 pl-0 lg:pl-6 pt-4 lg:pt-0">
-              <div className="w-12 h-12 rounded-full bg-[#DC2626] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#DC2626]/30">
+              <div className="w-12 h-12 rounded-full bg-[#1E90FF] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1E90FF]/30">
                 <Award className="w-6 h-6" />
               </div>
               <div className="text-left">
@@ -211,8 +211,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
             {/* Stat 4 */}
             <div className="flex items-center gap-4 pl-0 lg:pl-6 pt-4 lg:pt-0">
-              <div className="w-12 h-12 rounded-full bg-[#DC2626] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#DC2626]/30">
-                <Globe2 className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-full bg-[#1E90FF] text-[#1E90FF] flex items-center justify-center shrink-0 shadow-md shadow-[#1E90FF]/30 bg-white border border-slate-200">
+                <Globe2 className="w-6 h-6 text-[#1E90FF]" />
               </div>
               <div className="text-left">
                 <p className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">

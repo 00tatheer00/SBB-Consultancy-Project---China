@@ -13,7 +13,6 @@ import { SCHOLARSHIPS } from "@/data/mock-data";
 import { GlassCard } from "./ui/glass-card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { ChinaFlag } from "./ui/china-flag";
 
 interface ScholarshipsSectionProps {
   onOpenBooking: () => void;
@@ -25,7 +24,7 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
   const [userDegree, setUserDegree] = useState<string>("bachelor");
   const [estimatorResult, setEstimatorResult] = useState<string | null>(null);
 
-  const badges = ["All", "100% Full", "Government", "Provincial", "Merit"];
+  const badges = ["All", "100% Full", "Government", "Partial", "Merit"];
 
   const filteredScholarships =
     selectedBadge === "All"
@@ -35,11 +34,11 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
   const handleEstimate = (e: React.FormEvent) => {
     e.preventDefault();
     if (userScore >= 80) {
-      setEstimatorResult("High Qualification! You qualify for 100% Full CSC Tuition Exemption + Free Dormitory + Monthly Stipend (CNY 2,500/mo).");
+      setEstimatorResult("High Eligibility! You qualify for 100% Full Tuition + Monthly Accommodation Stipend grants.");
     } else if (userScore >= 70) {
-      setEstimatorResult("Good Qualification! You qualify for Provincial Government Full Tuition Waivers.");
+      setEstimatorResult("Good Eligibility! You qualify for 50% Tuition Waiver & Provincial Merit Bursaries.");
     } else {
-      setEstimatorResult("Moderate Qualification! You qualify for Presidential University First Class Waiver Grants.");
+      setEstimatorResult("Moderate Eligibility! You qualify for Partial Tuition Waivers and Direct Admissions.");
     }
   };
 
@@ -49,15 +48,13 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <Badge variant="accent" className="mx-auto text-xs py-1 px-3">
-            <Gift className="w-3.5 h-3.5" /> 100% Full CSC Scholarship Hub 🇨🇳
+            <Gift className="w-3.5 h-3.5" /> 100% Full Scholarship Hub
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center justify-center gap-2">
-            <span>Study in China With</span>
-            <span className="text-[#DC2626]">Zero Tuition Burden</span>
-            <ChinaFlag size="lg" />
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Study Abroad With <span className="text-[#1E90FF]">Zero Tuition Burden</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg font-normal">
-            We specialize in securing 100% Full Chinese Government CSC Grants (Type A & B), Zhejiang Provincial Grants, Shanghai SGS, and Jiangsu Jasmine Full Scholarships.
+            We specialize in securing 100% Full Chinese Government CSC Grants, Türkiye Bursları, European Stipendium Hungaricum, and UK Merit Bursaries for international applicants.
           </p>
 
           {/* Filter Badges */}
@@ -66,9 +63,9 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
               <button
                 key={b}
                 onClick={() => setSelectedBadge(b)}
-                className={`px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full transition-all cursor-pointer ${
+                className={`px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-full transition-all ${
                   selectedBadge === b
-                    ? "bg-[#DC2626] text-white shadow-xs font-bold"
+                    ? "bg-[#1E90FF] text-white shadow-xs font-bold"
                     : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
                 }`}
               >
@@ -83,7 +80,7 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
           {filteredScholarships.map((sch) => (
             <GlassCard
               key={sch.id}
-              className="p-6 border border-slate-200 bg-white flex flex-col justify-between hover:border-[#DC2626]/40 shadow-sm"
+              className="p-6 border border-slate-200 bg-white flex flex-col justify-between hover:border-[#1E90FF]/40 shadow-sm"
             >
               <div className="space-y-4">
                 {/* Header Badge */}
@@ -91,9 +88,7 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
                   <Badge variant="accent" className="text-xs px-2.5 py-0.5 font-bold">
                     {sch.badge} Coverage
                   </Badge>
-                  <span className="text-xs font-bold text-slate-600 flex items-center gap-1">
-                    <ChinaFlag size="sm" /> {sch.country}
-                  </span>
+                  <span className="text-xs font-bold text-slate-600">{sch.country}</span>
                 </div>
 
                 <h3 className="text-lg font-bold text-slate-900 leading-snug">
@@ -107,11 +102,11 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
                 {/* Benefits List */}
                 <div className="space-y-2 pt-2">
                   <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                    Included CSC Benefits:
+                    Included Benefits:
                   </p>
                   {sch.benefits.map((ben, i) => (
                     <div key={i} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-[#DC2626] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#1E90FF] shrink-0 mt-0.5" />
                       <span>{ben}</span>
                     </div>
                   ))}
@@ -121,7 +116,7 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
                 <div className="pt-3 border-t border-slate-100 text-xs">
                   <div className="flex items-center justify-between text-slate-500 font-medium">
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5 text-[#DC2626]" /> Application Deadline:
+                      <Calendar className="w-3.5 h-3.5 text-[#1E90FF]" /> Deadline:
                     </span>
                     <span className="font-bold text-slate-900">{sch.deadline}</span>
                   </div>
@@ -148,15 +143,15 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
         <div className="mt-16 max-w-4xl mx-auto">
           <GlassCard className="p-8 border border-slate-200 bg-white shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-              <div className="md:col-span-6 space-y-3 text-left">
+              <div className="md:col-span-6 space-y-3">
                 <Badge variant="primary">
-                  <Calculator className="w-3.5 h-3.5" /> CSC Instant Assessment
+                  <Calculator className="w-3.5 h-3.5" /> Instant Assessment
                 </Badge>
                 <h3 className="text-2xl font-extrabold text-slate-900">
-                  Check Your CSC Scholarship Qualification
+                  Check Your Scholarship Eligibility
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
-                  Enter your current academic percentage / FSc score to instantly estimate your 100% Full CSC Chinese Government Scholarship tier.
+                  Enter your current academic percentage / GPA to instantly estimate your 100% Full CSC or Merit Scholarship qualification tier.
                 </p>
               </div>
 
@@ -172,9 +167,9 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
                       max="100"
                       value={userScore}
                       onChange={(e) => setUserScore(Number(e.target.value))}
-                      className="w-full accent-[#DC2626] cursor-pointer"
+                      className="w-full accent-[#1E90FF] cursor-pointer"
                     />
-                    <span className="text-base font-bold text-[#DC2626] w-12 text-right">
+                    <span className="text-base font-bold text-[#1E90FF] w-12 text-right">
                       {userScore}%
                     </span>
                   </div>
@@ -187,7 +182,7 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
                   <select
                     value={userDegree}
                     onChange={(e) => setUserDegree(e.target.value)}
-                    className="w-full p-2.5 text-xs font-medium bg-white rounded-xl border border-slate-300 focus:outline-none focus:border-[#DC2626]"
+                    className="w-full p-2.5 text-xs font-medium bg-white rounded-xl border border-slate-300 focus:outline-none focus:border-[#1E90FF]"
                   >
                     <option value="bachelor">Bachelor Degree (MBBS, BDS, BEng, BSc)</option>
                     <option value="master">Master Degree (MSc, MBA, MEng)</option>
@@ -203,7 +198,7 @@ export const ScholarshipsSection: React.FC<ScholarshipsSectionProps> = ({ onOpen
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-3 bg-[#FEF2F2] text-[#DC2626] rounded-xl text-xs font-bold text-center border border-[#DC2626]/30"
+                    className="p-3 bg-[#EAF4FF] text-[#1E90FF] rounded-xl text-xs font-bold text-center border border-[#1E90FF]/30"
                   >
                     {estimatorResult}
                   </motion.div>

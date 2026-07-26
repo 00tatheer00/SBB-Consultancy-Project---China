@@ -31,19 +31,19 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#DC2626]/40 active:scale-95 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap";
+      "group inline-flex items-center justify-center font-bold transition-all duration-300 rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1E90FF]/40 active:scale-95 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap";
 
     const variants = {
       primary:
-        "bg-[#DC2626] text-white hover:bg-[#B91C1C] shadow-sm hover:shadow-md border border-[#DC2626]",
+        "bg-[#1E90FF] text-white hover:bg-[#0077E6] shadow-sm hover:shadow-lg hover:shadow-[#1E90FF]/35 border border-[#1E90FF] hover:-translate-y-0.5",
       secondary:
-        "bg-[#FEF2F2] text-[#DC2626] hover:bg-[#DC2626] hover:text-white border border-[#DC2626]/25",
+        "bg-[#EAF4FF] text-[#1E90FF] hover:bg-[#1E90FF] hover:text-white border border-[#1E90FF]/25 hover:shadow-md hover:-translate-y-0.5",
       outline:
-        "bg-white text-slate-800 border border-slate-300 hover:border-[#DC2626] hover:text-[#DC2626] shadow-xs",
+        "bg-white text-slate-800 border border-slate-300 hover:border-[#1E90FF] hover:text-[#1E90FF] shadow-xs hover:shadow-md hover:bg-[#FAFCFF] hover:-translate-y-0.5",
       ghost:
-        "bg-transparent text-slate-700 hover:bg-slate-100 hover:text-[#DC2626]",
+        "bg-transparent text-slate-700 hover:bg-[#EAF4FF] hover:text-[#1E90FF]",
       dark:
-        "bg-slate-900 text-white hover:bg-slate-800 shadow-sm border border-slate-800",
+        "bg-slate-900 text-white hover:bg-slate-800 shadow-sm hover:shadow-lg border border-slate-800 hover:-translate-y-0.5",
     };
 
     const sizes = {
@@ -55,14 +55,24 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <motion.button
         ref={ref}
-        whileHover={{ scale: 1.01 }}
-        whileTap={{ scale: 0.98 }}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.97 }}
         className={cn(baseStyles, variants[variant], sizes[size], className)}
         {...props}
       >
-        {icon && iconPosition === "left" && <span className="inline-flex items-center shrink-0">{icon}</span>}
-        <span className="inline-flex items-center gap-2 leading-none whitespace-nowrap">{children}</span>
-        {icon && iconPosition === "right" && <span className="inline-flex items-center shrink-0">{icon}</span>}
+        {icon && iconPosition === "left" && (
+          <span className="inline-flex items-center shrink-0 group-hover:-translate-x-0.5 transition-transform duration-300">
+            {icon}
+          </span>
+        )}
+        <span className="inline-flex items-center gap-2 leading-none whitespace-nowrap">
+          {children}
+        </span>
+        {icon && iconPosition === "right" && (
+          <span className="inline-flex items-center shrink-0 group-hover:translate-x-1 transition-transform duration-300">
+            {icon}
+          </span>
+        )}
       </motion.button>
     );
   }

@@ -9,8 +9,7 @@ import { PROGRAMS } from "@/data/mock-data";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
-import { ArrowLeft, CheckCircle2, Briefcase, GraduationCap, ArrowRight } from "lucide-react";
-import { ChinaFlag } from "@/components/ui/china-flag";
+import { ArrowLeft, CheckCircle2, Stethoscope, Briefcase, GraduationCap, ArrowRight } from "lucide-react";
 
 export default function ProgramDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -22,7 +21,7 @@ export default function ProgramDetailPage({ params }: { params: Promise<{ id: st
     return (
       <main className="min-h-screen pt-40 text-center">
         <h1 className="text-3xl font-bold">Degree Program Not Found</h1>
-        <Link href="/programs" className="text-[#DC2626] underline mt-4 inline-block">Return to Programs Directory</Link>
+        <Link href="/programs" className="text-[#1E90FF] underline mt-4 inline-block">Return to Programs Directory</Link>
       </main>
     );
   }
@@ -33,7 +32,7 @@ export default function ProgramDetailPage({ params }: { params: Promise<{ id: st
       
       <div className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/programs" className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#DC2626] mb-6">
+          <Link href="/programs" className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#1E90FF] mb-6">
             <ArrowLeft className="w-4 h-4" /> Back to Programs Directory
           </Link>
 
@@ -41,14 +40,14 @@ export default function ProgramDetailPage({ params }: { params: Promise<{ id: st
             {/* Main Content */}
             <div className="lg:col-span-8 space-y-8">
               <div className="space-y-3">
-                <Badge variant="primary" className="text-xs px-3 py-1 font-bold flex items-center gap-1.5 w-fit">
-                  <ChinaFlag size="sm" /> {program.category} Degree Program 🇨🇳
+                <Badge variant="primary" className="text-xs px-3 py-1 font-bold">
+                  {program.category} Degree Program 🇨🇳
                 </Badge>
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
                   {program.title}
                 </h1>
                 <p className="text-sm text-slate-500 font-semibold flex items-center gap-2">
-                  <GraduationCap className="w-4 h-4 text-[#DC2626]" /> Duration: {program.duration}
+                  <GraduationCap className="w-4 h-4 text-[#1E90FF]" /> Duration: {program.duration}
                 </p>
               </div>
 
@@ -60,12 +59,12 @@ export default function ProgramDetailPage({ params }: { params: Promise<{ id: st
               {/* Career Pathways */}
               <GlassCard className="p-8 border border-slate-200 bg-[#FAFCFF] space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                  <Briefcase className="w-5 h-5 text-[#DC2626]" /> Global Career & Licensing Pathways
+                  <Briefcase className="w-5 h-5 text-[#1E90FF]" /> Global Career & Licensing Pathways
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {program.careerPathways.map((path, i) => (
                     <div key={i} className="flex items-center gap-2.5 p-3 bg-white rounded-xl border border-slate-200 text-xs font-bold text-slate-800">
-                      <CheckCircle2 className="w-4 h-4 text-[#DC2626]" />
+                      <CheckCircle2 className="w-4 h-4 text-[#1E90FF]" />
                       <span>{path}</span>
                     </div>
                   ))}
@@ -93,7 +92,7 @@ export default function ProgramDetailPage({ params }: { params: Promise<{ id: st
                   variant="primary"
                   size="md"
                   onClick={() => setBookingOpen(true)}
-                  className="w-full text-xs font-bold bg-[#DC2626]"
+                  className="w-full text-xs font-bold"
                   icon={<ArrowRight className="w-4 h-4" />}
                 >
                   Apply For {program.category} Seat
