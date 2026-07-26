@@ -43,16 +43,17 @@ export const ContactSection: React.FC = () => {
     <section id="contact" className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
           <Badge variant="primary" className="mx-auto">
-            <PhoneCall className="w-3.5 h-3.5" /> Start Your China Academic Journey 🇨🇳
+            <PhoneCall className="w-3.5 h-3.5 text-[#1E90FF]" />
+            <span>Start Your China Academic Journey</span>
+            <ChinaFlag size="sm" />
           </Badge>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight flex items-center justify-center gap-3">
-            <span>Book a Free 1-on-1</span>
-            <span className="text-[#1E90FF]">China Consultation</span>
-            <ChinaFlag size="lg" />
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Book a Free 1-on-1 <span className="text-[#1E90FF]">China Consultation</span>{" "}
+            <ChinaFlag size="lg" className="inline-block align-middle" />
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg font-normal">
+          <p className="text-slate-600 text-base sm:text-lg font-normal max-w-2xl mx-auto">
             Speak directly with our senior China educational advisors for transcript evaluation, CSC scholarship profiling, and university shortlist recommendations.
           </p>
         </div>
@@ -132,13 +133,13 @@ export const ContactSection: React.FC = () => {
                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                         className="w-full p-3 rounded-xl border border-slate-200 text-xs font-medium text-slate-900 focus:outline-none focus:border-[#1E90FF] bg-white"
                       >
-                        <option value="Hangzhou Hub">🇨🇳 Hangzhou (Zhejiang Univ & Tech Hub)</option>
-                        <option value="Beijing Hub">🇨🇳 Beijing (Tsinghua & Peking Capital)</option>
-                        <option value="Shanghai Hub">🇨🇳 Shanghai (Fudan & SJTU Megacity)</option>
-                        <option value="Nanjing Hub">🇨🇳 Nanjing (Medical & Pharma Hub)</option>
-                        <option value="Wuhan Hub">🇨🇳 Wuhan (Engineering & Tech Hub)</option>
-                        <option value="Guangzhou Hub">🇨🇳 Guangzhou (Canton Trade Hub)</option>
-                        <option value="Xi'an Hub">🇨🇳 Xi'an (Silk Road Academic Hub)</option>
+                        <option value="Hangzhou Hub">Hangzhou (Zhejiang Univ & Tech Hub)</option>
+                        <option value="Beijing Hub">Beijing (Tsinghua & Peking Capital)</option>
+                        <option value="Shanghai Hub">Shanghai (Fudan & SJTU Megacity)</option>
+                        <option value="Nanjing Hub">Nanjing (Medical & Pharma Hub)</option>
+                        <option value="Wuhan Hub">Wuhan (Engineering & Tech Hub)</option>
+                        <option value="Guangzhou Hub">Guangzhou (Canton Trade Hub)</option>
+                        <option value="Xi'an Hub">Xi'an (Silk Road Academic Hub)</option>
                       </select>
                     </div>
                   </div>
