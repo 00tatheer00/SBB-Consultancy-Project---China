@@ -14,6 +14,7 @@ import { GlassCard } from "./ui/glass-card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Modal } from "./ui/modal";
+import { ChinaFlag } from "./ui/china-flag";
 
 interface DestinationsSectionProps {
   onOpenBooking: () => void;
@@ -37,10 +38,12 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-slate-200">
           <div className="space-y-3 max-w-2xl">
             <Badge variant="primary">
-              <Globe className="w-3.5 h-3.5" /> Premier Study Hubs in China 🇨🇳
+              <ChinaFlag size="sm" /> Premier Study Hubs in China
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Explore Top Academic <span className="text-[#1E90FF]">Cities in China 🇨🇳</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight flex items-center flex-wrap gap-2">
+              <span>Explore Top Academic</span>
+              <span className="text-[#1E90FF]">Cities in China</span>
+              <ChinaFlag size="lg" />
             </h2>
             <p className="text-slate-600 text-base font-normal">
               Choose from premier university cities across China offering English-medium MBBS, engineering, and tech degrees with 100% CSC Government & Provincial Scholarships.
@@ -84,7 +87,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
 
                   {/* Top Flag & Visa Badge */}
                   <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
-                    <span className="text-3xl filter drop-shadow">🇨🇳</span>
+                    <ChinaFlag size="md" className="shadow-md" />
                     <Badge variant="primary" className="text-xs px-2.5 py-0.5 font-semibold bg-white/95 text-slate-900 border-none">
                       {dest.visaSuccessRate} JW202 Success
                     </Badge>
@@ -93,7 +96,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
                   {/* Name Tag */}
                   <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white">
                     <h3 className="text-2xl font-bold flex items-center gap-2">
-                      {dest.name} <span className="text-xl">🇨🇳</span>
+                      <span>{dest.name}</span> <ChinaFlag size="md" />
                     </h3>
                     <p className="text-xs text-slate-300 font-medium line-clamp-1">{dest.tagline}</p>
                   </div>
@@ -124,7 +127,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
                     <p className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                       Featured Programs
                     </p>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-[#EAF4FF] flex-wrap gap-1.5">
                       {dest.featuredPrograms.map((prog, idx) => (
                         <span
                           key={idx}
@@ -178,7 +181,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
         <Modal
           isOpen={!!activeModalDestination}
           onClose={() => setActiveModalDestination(null)}
-          title={`Study in ${activeModalDestination.name} 🇨🇳`}
+          title={`Study in ${activeModalDestination.name}`}
         >
           <div className="space-y-6">
             <div className="relative h-48 rounded-2xl overflow-hidden border border-slate-200">
@@ -190,7 +193,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
               <div className="absolute bottom-4 left-4 text-white">
                 <h4 className="text-xl font-bold flex items-center gap-2">
-                  {activeModalDestination.name} Academic Guide 🇨🇳
+                  <span>{activeModalDestination.name} Academic Guide</span> <ChinaFlag size="md" />
                 </h4>
                 <p className="text-xs text-slate-300">{activeModalDestination.tagline}</p>
               </div>
@@ -211,8 +214,8 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({ onOpen
               <p className="text-sm font-bold text-slate-900 mb-2">Featured State Universities</p>
               <div className="flex flex-wrap gap-2">
                 {activeModalDestination.popularCities.map((city, i) => (
-                  <span key={i} className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full flex items-center gap-1">
-                    🇨🇳 {city}
+                  <span key={i} className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full flex items-center gap-1.5">
+                    <ChinaFlag size="sm" /> {city}
                   </span>
                 ))}
               </div>

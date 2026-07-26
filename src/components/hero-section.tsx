@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "./ui/button";
 import { Counter } from "./ui/counter";
+import { ChinaFlag } from "./ui/china-flag";
 
 interface HeroSectionProps {
   onOpenBooking: () => void;
@@ -30,17 +31,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
   return (
     <section id="hero" className="relative pt-36 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-white">
-      {/* Background Graphic & Skyline Photo */}
+      {/* Background Graphic & Premium Chinese Campus Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Right Skyline Image */}
+        {/* Right Campus & Skyline Image */}
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-3/5 h-full opacity-90">
           <img
-            src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=2000&q=80"
-            alt="Shanghai Skyline & Chinese State University Campus"
-            className="w-full h-full object-cover object-right-top"
+            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=2000&q=80"
+            alt="Chinese State University Campus Architecture"
+            className="w-full h-full object-cover object-center"
           />
           {/* Seamless White Fade Gradient Left-to-Right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 lg:via-white/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 lg:via-white/55 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/40" />
         </div>
       </div>
@@ -56,7 +57,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.4 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF4FF] border border-[#1E90FF]/30 text-[#1E90FF] text-xs sm:text-sm font-semibold shadow-xs"
             >
-              <span>🇨🇳 Official China University Admissions Portal</span>
+              <ChinaFlag size="sm" />
+              <span>Official China University Admissions Portal</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -66,8 +68,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.4, delay: 0.1 }}
               className="space-y-1"
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-[1.12]">
-                Study in China 🇨🇳
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-[1.12] flex items-center justify-center lg:justify-start gap-3">
+                <span>Study in China</span>
+                <ChinaFlag size="lg" className="shadow-md" />
               </h1>
               <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1E90FF] leading-[1.12]">
                 Build Your Global Future
@@ -81,7 +84,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.4, delay: 0.2 }}
               className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed"
             >
-              We help ambitious international students secure admissions and 100% CSC Full Government Scholarships across China's top-ranked state universities.
+              We help ambitious international students secure direct admissions and 100% CSC Full Government Scholarships across China's top-ranked state universities.
             </motion.p>
 
             {/* Dual CTA Buttons */}

@@ -12,14 +12,11 @@ import {
   ChevronDown,
   Menu,
   X,
-  Sparkles,
-  Building2,
   Stethoscope,
-  Cpu,
-  Globe,
   Award
 } from "lucide-react";
 import { Button } from "./ui/button";
+import { ChinaFlag } from "./ui/china-flag";
 import { DESTINATIONS, PROGRAMS, UNIVERSITIES } from "@/data/mock-data";
 
 interface NavbarProps {
@@ -47,7 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Left Announcement */}
           <div className="flex items-center gap-2 font-medium">
-            <span className="text-base">🇨🇳</span>
+            <ChinaFlag size="sm" />
             <GraduationCap className="w-4 h-4 text-sky-300" />
             <span>
               <strong className="text-amber-300">100% CSC Chinese Government Scholarship</strong> Applications Open for 2026/2027 Intakes
@@ -143,7 +140,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                     >
                       <div className="px-3 py-1.5 text-[10px] font-extrabold text-slate-400 uppercase tracking-wider flex items-center justify-between border-b border-slate-100 pb-2 mb-1">
                         <span>China Academic Hubs</span>
-                        <span>🇨🇳</span>
+                        <ChinaFlag size="sm" />
                       </div>
                       {DESTINATIONS.map((dest) => (
                         <Link
@@ -153,7 +150,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                         >
                           <div>
                             <p className="text-xs font-bold text-slate-900 group-hover:text-[#1E90FF] flex items-center gap-1.5">
-                              <span>🇨🇳</span> {dest.name}
+                              <ChinaFlag size="sm" /> {dest.name}
                             </p>
                             <p className="text-[10px] text-slate-500 font-medium line-clamp-1">{dest.tagline}</p>
                           </div>
@@ -271,7 +268,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                             <p className="text-xs font-bold text-slate-900 group-hover:text-[#1E90FF]">
                               {uni.name}
                             </p>
-                            <p className="text-[10px] text-slate-500 font-medium">🇨🇳 {uni.city}, China</p>
+                            <p className="text-[10px] text-slate-500 font-medium flex items-center gap-1">
+                              <ChinaFlag size="sm" /> {uni.city}, China
+                            </p>
                           </div>
                           <span className="text-[10px] font-black text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">
                             QS #{uni.qsRank}
@@ -380,22 +379,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               </Link>
 
               <div className="pt-2">
-                <p className="px-4 text-[10px] font-extrabold text-slate-400 uppercase tracking-wider mb-1">China Cities</p>
+                <p className="px-4 text-[10px] font-extrabold text-slate-400 uppercase tracking-wider mb-1 flex items-center gap-1">
+                  <span>China Cities</span> <ChinaFlag size="sm" />
+                </p>
                 <Link
                   href="/destinations"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-4 py-2 rounded-xl text-sm font-semibold text-slate-800 hover:bg-[#EAF4FF] hover:text-[#1E90FF]"
                 >
-                  All China Cities & Hubs 🇨🇳
+                  All China Cities & Hubs
                 </Link>
                 {DESTINATIONS.map((d) => (
                   <Link
                     key={d.id}
                     href={`/destinations/${d.id}`}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-6 py-1.5 text-xs text-slate-600 hover:text-[#1E90FF]"
+                    className="flex items-center gap-1.5 px-6 py-1.5 text-xs text-slate-600 hover:text-[#1E90FF]"
                   >
-                    🇨🇳 {d.name}
+                    <ChinaFlag size="sm" /> {d.name}
                   </Link>
                 ))}
               </div>
